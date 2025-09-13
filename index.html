@@ -17,7 +17,25 @@
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial; color:var(--text)}
-    body{background:var(--bg);line-height:1.6}
+    body {
+  margin: 0;
+  height: 100%;
+  font-family: Inter, system-ui, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+  color: var(--text);
+  line-height: 1.6;
+
+  /* tambahkan ini untuk background gradasi bergerak */
+  background: linear-gradient(-45deg, #000000, #222222, #555555, #aaaaaa);
+  background-size: 400% 400%;
+  animation: moveBG 12s ease infinite;
+}
+
+@keyframes moveBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
     .container{max-width:1100px;margin:0 auto;padding:28px}
     header{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px}
@@ -101,7 +119,8 @@
             <h3>Kontak cepat</h3>
             <p style="margin:6px 0">WhatsApp: <a href="https://wa.me/6281392400272" style="color:var(--accent)">+62 813-9240-0272</a></p>
             <p style="margin:6px 0">Instagram: <a href="https://instagram.com/" style="color:var(--accent)">@flmnkomp</a></p>
-            <p style="margin:6px 0;color:var(--muted);font-size:13px">Jam operasional: Senin–Sabtu, 09:00–17:00</p>
+            <p style="margin:6px 0;color:var(--muted);font-size:13px">Jam operasional Selasa-Minggu&nbsp;&nbsp;<br>
+Panggilan:&nbsp; Selasa-Minggu, 09:00–16:00</p>
           </div>
         </div>
       </section>
@@ -146,7 +165,7 @@
           </div>
           <div class="box">
             <strong>Jam Kerja</strong>
-            <p style="margin:6px 0;color:var(--muted)">Senin–Sabtu • 09:00–17:00</p>
+            <p style="margin:6px 0;color:var(--muted)">Selasa–Minggu</p>
             <p style="margin:6px 0;color:var(--muted)">Service panggilan tersedia (area Semarang)</p>
           </div>
         </div>
@@ -168,3 +187,4 @@
   </div>
 </body>
 </html>
+
