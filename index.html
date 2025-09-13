@@ -17,14 +17,17 @@
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial; color:var(--text)}
-    body{
-  line-height:1.6;
+body {
+  line-height: 1.6;
   min-height: 100vh;
 
+  /* Gradasi animasi diagonal */
   background: linear-gradient(-45deg, #000000, #222222, #555555, #aaaaaa);
+  background-repeat: no-repeat;
   background-size: 600% 600%;
+
   animation: moveBG 15s ease infinite;
-  -webkit-animation: moveBG 15s ease infinite;
+  -webkit-animation: moveBG 15s ease infinite; /* Safari */
   -moz-animation: moveBG 15s ease infinite;
 }
 
@@ -33,6 +36,13 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+@-webkit-keyframes moveBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
     .container{max-width:1100px;margin:0 auto;padding:28px}
     header{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px}
