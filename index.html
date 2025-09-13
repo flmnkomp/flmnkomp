@@ -17,29 +17,16 @@
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial; color:var(--text)}
-    html, body {
-  height: 100%;
-  margin: 0;
-  font-family: Inter, system-ui, Segoe UI, Roboto, 'Helvetica Neue', Arial;
-  color: var(--text);
-}
+    body{
+  line-height:1.6;
+  min-height: 100vh;
 
-html {
-  /* Background di html agar penuh di HP */
   background: linear-gradient(-45deg, #000000, #222222, #555555, #aaaaaa);
-  background-repeat: no-repeat;
-  background-size: 600% 600%;
+  background-size: 250% 1400%;
   animation: moveBG 15s ease infinite;
   -webkit-animation: moveBG 15s ease infinite;
   -moz-animation: moveBG 15s ease infinite;
 }
-
-body {
-  line-height: 1.6;
-  min-height: 100%;
-  background: transparent; /* transparan supaya ikut html */
-}
-
 
 @keyframes moveBG {
   0% { background-position: 0% 50%; }
