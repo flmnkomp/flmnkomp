@@ -17,17 +17,14 @@
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial; color:var(--text)}
-body {
-  line-height: 1.6;
+    body{
+  line-height:1.6;
   min-height: 100vh;
 
-  /* Gradasi animasi diagonal */
   background: linear-gradient(-45deg, #000000, #222222, #555555, #aaaaaa);
-  background-repeat: no-repeat;
   background-size: 600% 600%;
-
   animation: moveBG 15s ease infinite;
-  -webkit-animation: moveBG 15s ease infinite; /* Safari */
+  -webkit-animation: moveBG 15s ease infinite;
   -moz-animation: moveBG 15s ease infinite;
 }
 
@@ -36,13 +33,6 @@ body {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
-@-webkit-keyframes moveBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
     .container{max-width:1100px;margin:0 auto;padding:28px}
     header{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px}
@@ -126,7 +116,7 @@ body {
             <h3>Kontak cepat</h3>
             <p style="margin:6px 0">WhatsApp: <a href="https://wa.me/6281392400272" style="color:var(--accent)">+62 813-9240-0272</a></p>
             <p style="margin:6px 0">Instagram: <a href="https://instagram.com/" style="color:var(--accent)">@flmnkomp</a></p>
-            <p style="margin:6px 0;color:var(--muted);font-size:13px">Jam operasional: Selasa-Minggu&nbsp; &nbsp;Panggilan jam 09:00-16.00)</p>
+            <p style="margin:6px 0;color:var(--muted);font-size:13px">Jam operasional: Selasa-Minggu</p>
           </div>
         </div>
       </section>
@@ -188,7 +178,7 @@ body {
     </main>
 
     <footer>
-      © Timor Faelmin • Flmn Komp • 2022-2025 — Developed for web viewing. 
+      © Timor Faelmin • Flmn Komp • 2022-2025 
     </footer>
   </div>
 </body>
