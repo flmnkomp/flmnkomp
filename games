@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta name="keywords" content="isi game pc batang, jasa instal game murah, copy game harddisk, isi game cepat tanpa download">
+<link rel="canonical" href="https://www.flmnkomp.com/jasa-isi-game.html">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Isi Game PC Murah & Cepat | Rp 25.000 / Game | Flmn Komp</title>
+
+<meta name="description" content="Isi game PC murah hanya Rp 25.000 per game. Tanpa download lama, langsung instal dan siap dimainkan. Tersedia di Batang, Pekalongan, Pemalang.">
+
+<link rel="icon" href="favicon.png">
+
+<style>
+:root{
+  --accent:#34d399;
+  --muted:#d1d5db;
+  --card:#2d333b;
+  --bg:#181a1f;
+  --text:#f9fafb;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto;color:var(--text)}
+body{
+  background: linear-gradient(-45deg, #000000, #222222, #555555, #aaaaaa);
+  background-size: 600% 3600%;
+  animation: moveBG 15s ease infinite;
+}
+@keyframes moveBG{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+.container{max-width:1100px;margin:auto;padding:28px}
+header{display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;gap:10px;align-items:center}
+nav a{margin-left:14px;color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--accent)}
+.hero{display:flex;flex-wrap:wrap;gap:24px;margin-top:20px}
+.hero-left{flex:1}
+.hero-right{flex:1}
+h1{font-size:28px;color:var(--muted)}
+h2{color:var(--muted)}
+.cta{background:var(--accent);padding:10px 16px;border-radius:8px;color:#111;text-decoration:none;display:inline-block;margin-top:12px;font-weight:600}
+.card{background:var(--card);padding:14px;border-radius:10px;margin-top:12px}
+.service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px}
+.tag{display:inline-block;background:#20242a;color:var(--accent);padding:6px 10px;margin:4px;border-radius:999px;font-size:12px}
+footer{text-align:center;margin-top:30px;color:var(--muted)}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+  <div class="brand">
+    <img src="logo.png" width="50">
+    <div>
+      <strong>Flmn Komp</strong>
+      <div style="font-size:12px;color:var(--muted)">Isi Game PC • Batang</div>
+    </div>
+  </div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/tarif-servis.html">Tarif</a>
+    <a href="/tentang.html">Tentang</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-left">
+    <h1>Isi Game PC Tanpa Ribet & Tanpa Download</h1>
+    <p style="color:var(--muted)">
+      Mau main game tapi malas download lama? 
+      Di sini kamu bisa langsung <strong>isi & instal game siap main</strong> — cepat, praktis, dan hemat.
+    </p>
+
+    <div class="card">
+      <strong style="font-size:18px">💸 Rp 25.000 / game</strong>
+      <div style="color:var(--muted);font-size:13px">Sudah instal & siap dimainkan</div>
+    </div>
+
+    <a class="cta" href="https://wa.me/6281392400272" target="_blank">
+      Chat & Order Sekarang
+    </a>
+
+    <div style="margin-top:10px">
+      <span class="tag">No Download</span>
+      <span class="tag">Siap Main</span>
+      <span class="tag">Cepat</span>
+      <span class="tag">Murah</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="card">
+      <h3>Kenapa isi game di sini?</h3>
+      <ul style="color:var(--muted)">
+        <li>✔ Tidak perlu kuota besar</li>
+        <li>✔ Tidak perlu nunggu lama</li>
+        <li>✔ Game langsung jalan</li>
+        <li>✔ Bisa request game favorit</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Kontak Cepat</h3>
+      <p>WhatsApp: <a href="https://wa.me/6281392400272" style="color:var(--accent)">+62 813-9240-0272</a></p>
+    </div>
+  </div>
+</section>
+
+<section style="margin-top:26px">
+  <h2>Layanan</h2>
+  <div class="service-grid">
+    <div class="card"><h3>Isi Game</h3><p>Langsung copy game ke PC/laptop.</p></div>
+    <div class="card"><h3>Instal Game</h3><p>Game siap dimainkan tanpa setting ulang.</p></div>
+    <div class="card"><h3>Copy Data</h3><p>Transfer data ke HDD/SSD kamu.</p></div>
+    <div class="card"><h3>Request Game</h3><p>Bisa request sesuai keinginan.</p></div>
+  </div>
+</section>
+
+<section style="margin-top:26px">
+  <h2>Game Favorit</h2>
+  <div class="card">
+    <span class="tag">GTA V</span>
+    <span class="tag">FIFA</span>
+    <span class="tag">PES</span>
+    <span class="tag">Call of Duty</span>
+    <span class="tag">Resident Evil</span>
+    <span class="tag">NFS</span>
+  </div>
+</section>
+
+<section style="margin-top:26px">
+  <h2>Area Layanan</h2>
+  <div class="card">
+    <p style="color:var(--muted)">
+      Batang • Pekalongan • Pemalang • Comal
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>© Flmn Komp</footer>
+
+</div>
+</body>
+</html>
