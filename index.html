@@ -202,6 +202,24 @@ h2{font-size:clamp(23px,3.4vw,32px);font-weight:800;margin:0 0 20px}
 .nota-item .p{white-space:nowrap;font-weight:600}
 .nota-note{font-size:11px;color:var(--muted);margin:12px 0 0;text-align:center}
 .nota-cta{display:flex;justify-content:center;margin-top:18px}
+.nota-label{
+  display:block;font-size:11px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin:2px 0 8px;
+}
+.nota-input{
+  width:100%;border:1px solid var(--line-dark);border-radius:8px;
+  background:#FBFCFA;color:var(--ink);padding:11px 13px;
+  font-family:"IBM Plex Mono",monospace;font-size:13.5px;line-height:1.55;
+  resize:vertical;box-sizing:border-box;
+}
+.nota-input:focus{outline:2px solid var(--green);outline-offset:1px;border-color:var(--green)}
+.nota-check{width:100%;margin-top:10px;font-family:"Archivo",system-ui,sans-serif}
+.nota-item .p.contact{color:var(--muted);font-weight:500}
+.nota-total{display:flex;align-items:baseline;gap:8px;font-size:13.5px;padding:8px 0 0;font-weight:600}
+.nota-total .leader{flex:1;border-bottom:2px dotted var(--line-dark);transform:translateY(-4px)}
+.nota-none{
+  font-size:13px;color:var(--muted);text-align:center;padding:4px 0;line-height:1.6;
+}
 
 /* ---------- testimonials ---------- */
 .quote strong{display:block;font-size:14px;margin-bottom:2px}
@@ -323,7 +341,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,nav a:focus-visible{
 <body>
 
 <div class="topbar">
-  <span>Buka <b>Senin–Minggu</b></span>
+  <span>Buka <b>Selasa–Minggu</b></span>
   <span>Antar-jemput &amp; servis panggilan <b>tersedia</b></span>
   <span>Batang · Pekalongan · Pemalang · Comal</span>
 </div>
@@ -462,18 +480,28 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,nav a:focus-visible{
 <section id="harga">
   <div class="eyebrow">Tarif Servis</div>
   <h2 style="text-align:center">Estimasi harga, tanpa biaya siluman</h2>
+  <p class="lead" style="text-align:center;max-width:60ch;margin:0 auto 20px">
+    Ketik keluhan perangkatmu, klik <strong>Cek Estimasi</strong>, dan lihat perkiraan
+    biayanya langsung dari daftar tarif kami.
+  </p>
   <div class="nota">
     <div class="nota-in">
       <p class="nota-title">— Nota Servis —</p>
       <p class="nota-sub">Flmn Komp · Batang, Jawa Tengah</p>
       <hr>
-      <div class="nota-item"><span class="n">Instal ulang Windows</span><span class="leader"></span><span class="p">mulai Rp 100.000</span></div>
-      <div class="nota-item"><span class="n">Instal macOS</span><span class="leader"></span><span class="p">mulai Rp 200.000</span></div>
-      <div class="nota-item"><span class="n">Bersih-bersih laptop</span><span class="leader"></span><span class="p">Rp 150.000</span></div>
-      <hr>
-      <p class="nota-note">*Harga dapat berubah sesuai kondisi perangkat.<br>Konsultasi &amp; pengecekan awal — tanya dulu, gratis.</p>
-      <div class="nota-cta">
-        <a class="btn btn-wa" href="/tarif-servis.html">Lihat daftar tarif lengkap →</a>
+      <label class="nota-label" for="keluhanInput">Keluhan / kebutuhan servis</label>
+      <textarea id="keluhanInput" class="nota-input" rows="3"
+        placeholder="Contoh: laptop lemot dan panas, mau instal ulang windows sekalian ganti SSD"></textarea>
+      <button type="button" id="btnCek" class="btn btn-wa nota-check">Cek Estimasi</button>
+      <div id="hasilEstimasi" hidden>
+        <hr>
+        <div id="estList"></div>
+        <hr>
+        <p class="nota-note" id="estNote"></p>
+      </div>
+      <div class="nota-cta" style="flex-direction:column;gap:10px;align-items:center">
+        <a class="btn btn-wa" href="/janji.html">📅 Buat Janji Servis</a>
+        <a style="font-size:13px" href="/tarif-servis.html">Lihat daftar tarif lengkap →</a>
       </div>
     </div>
   </div>
@@ -568,6 +596,108 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,nav a:focus-visible{
 </main>
 
 <a class="wa-float" href="https://wa.me/6281392400272" target="_blank" rel="noopener" aria-label="Chat WhatsApp Flmn Komp">💬 Chat WhatsApp</a>
+
+<script>
+(function(){
+  "use strict";
+
+  // Daftar tarif (sumber: tarif-servis.html) + kata kunci keluhan yang cocok
+  var TARIF = [
+    { label:"Instal ulang Windows",        harga:100000, prefix:"mulai", not:["mac","imac","ios"], kw:["instal ulang","install ulang","instal windows","install windows","windows","format","os error","gagal booting","booting","blue screen","bsod"] },
+    { label:"Instal macOS",                harga:200000, prefix:"mulai", kw:["macos","mac os","instal mac","install mac","macbook","imac"] },
+    { label:"Install software",            harga:50000,  prefix:"",      suffix:"/paket", kw:["software","aplikasi","office","adobe","photoshop","autocad","corel"] },
+    { label:"Backup / recovery data",      harga:100000, prefix:"",      suffix:"*",     kw:["recovery","data hilang","kehapus","terhapus","backup","selamatkan data","file hilang"] },
+    { label:"Pembersihan virus + instal ulang", harga:100000, prefix:"mulai", kw:["virus","malware","ransomware","iklan muncul","adware","kena hack"] },
+    { label:"Upgrade RAM (jasa)",          harga:50000,  prefix:"",      suffix:"+ harga RAM", kw:["ram","tambah memori","upgrade memori"] },
+    { label:"Upgrade SSD (jasa)",          harga:50000,  prefix:"",      suffix:"+ harga SSD", kw:["ssd","hardisk","harddisk","hdd","ganti penyimpanan","upgrade penyimpanan"] },
+    { label:"Servis / ganti LCD",          harga:null,   kw:["lcd","layar","screen","pecah","bergaris","blank hitam","layar mati","flicker","layar bergaris"] },
+    { label:"Servis keyboard",             harga:20000,  prefix:"mulai", kw:["keyboard","tombol","keycaps","huruf tidak","tombol macet"] },
+    { label:"Bersih-bersih laptop",        harga:150000, prefix:"",      kw:["laptop panas","panas","overheat","kepanasan","fan berisik","kipas berisik","bersih laptop","laptop mati sendiri","cleaning laptop","debu"] },
+    { label:"Bersih-bersih komputer / PC", harga:100000, prefix:"",      kw:["pc panas","komputer panas","bersih pc","bersih komputer","cleaning pc","pc berisik","pc mati sendiri"] },
+    { label:"Isi game PC",                 harga:25000,  prefix:"",      suffix:"/game", not:["rakit","build"], kw:["isi game","copy game","instal game","install game","game"] },
+    { label:"Cek performa (lemot)",        harga:null,   rekom:"Rekomendasi: instal ulang + upgrade SSD", kw:["lemot","lambat","lelet","lag","ngelag","lola"] },
+    { label:"Rakit PC",                    harga:null,   kw:["rakit pc","rakit komputer","pc rakitan","build pc","pc gaming"] },
+    { label:"Diagnosa hardware",           harga:null,   kw:["mati total","tidak nyala","gak nyala","no display","mati sendiri","restart sendiri","charger","baterai","port rusak","engsel","motherboard","psu","tidak mengisi"] }
+  ];
+
+  function rupiah(n){ return "Rp " + n.toLocaleString("id-ID"); }
+
+  var btn  = document.getElementById("btnCek");
+  var inp  = document.getElementById("keluhanInput");
+  var box  = document.getElementById("hasilEstimasi");
+  var list = document.getElementById("estList");
+  var note = document.getElementById("estNote");
+
+  function cek(){
+    var q = (inp.value || "").toLowerCase();
+    list.innerHTML = "";
+    box.hidden = false;
+
+    if (!q.trim()){
+      list.innerHTML = '<p class="nota-none">Tulis dulu keluhannya di kolom atas, misalnya:<br>"laptop lemot", "layar pecah", atau "mau instal ulang windows".</p>';
+      note.textContent = "";
+      return;
+    }
+
+    var cocok = [];
+    TARIF.forEach(function(t){
+      var kena = t.kw.some(function(k){ return q.indexOf(k) !== -1; });
+      var kecuali = (t.not || []).some(function(k){ return q.indexOf(k) !== -1; });
+      if (kena && !kecuali) cocok.push(t);
+    });
+    // Kalau "lemot" terdeteksi bersama solusi spesifik, cukup tampilkan solusinya
+    if (cocok.length > 1){
+      cocok = cocok.filter(function(t){ return t.label !== "Cek performa (lemot)"; });
+    }
+
+    if (!cocok.length){
+      list.innerHTML = '<p class="nota-none">Keluhan ini perlu dicek langsung oleh teknisi kami —<br>klik <strong>Buat Janji Servis</strong> di bawah atau chat WhatsApp.<br>Pengecekan awal gratis.</p>';
+      note.textContent = "";
+      return;
+    }
+
+    var total = 0, adaHubungi = false, adaTambahan = false;
+    cocok.forEach(function(t){
+      var row = document.createElement("div");
+      row.className = "nota-item";
+      var harga;
+      if (t.harga === null){
+        harga = '<span class="p contact">Hubungi kami</span>';
+        adaHubungi = true;
+      } else {
+        var teks = (t.prefix ? t.prefix + " " : "") + rupiah(t.harga) + (t.suffix ? " " + t.suffix : "");
+        harga = '<span class="p">' + teks + '</span>';
+        total += t.harga;
+        if (t.suffix && t.suffix.indexOf("+") === 0) adaTambahan = true;
+      }
+      row.innerHTML = '<span class="n">' + t.label + '</span><span class="leader"></span>' + harga;
+      list.appendChild(row);
+      if (t.rekom){
+        var r = document.createElement("p");
+        r.className = "nota-none";
+        r.style.textAlign = "left";
+        r.textContent = t.rekom;
+        list.appendChild(r);
+      }
+    });
+
+    if (cocok.length > 1 && total > 0){
+      var tr = document.createElement("div");
+      tr.className = "nota-total";
+      tr.innerHTML = '<span>Perkiraan total jasa</span><span class="leader"></span><span>' + rupiah(total) + (adaHubungi || adaTambahan ? "+" : "") + '</span>';
+      list.appendChild(tr);
+    }
+
+    note.innerHTML = "*Ini estimasi otomatis berdasarkan daftar tarif kami — harga pasti dikonfirmasi setelah pengecekan (gratis)." +
+      (adaTambahan ? "<br>*Harga komponen (RAM/SSD) menyesuaikan tipe yang dipilih." : "");
+  }
+
+  btn.addEventListener("click", cek);
+  inp.addEventListener("keydown", function(e){
+    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) cek();
+  });
+})();
+</script>
 
 <footer>
   <div class="foot-in">
