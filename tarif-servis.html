@@ -1,317 +1,335 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tarif Servis Komputer & Laptop | Flmn Komp Batang & Pekalongan</title>
+  <meta name="description" content="Tarif servis komputer, laptop, dan MacBook di Batang & Pekalongan. Instal ulang, upgrade SSD/RAM, servis hardware dengan harga transparan.">
+  <meta name="keywords" content="tarif servis komputer, harga servis laptop, instal ulang Batang, servis laptop Pekalongan, servis macbook Batang">
+  <link rel="canonical" href="https://www.flmnkomp.com/tarif-servis.html">
+  <link rel="icon" type="image/png" href="favicon.png">
 
-<title>Tarif Servis Komputer & Laptop | Flmn Komp Batang & Pekalongan</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tarif Servis Komputer & Laptop — Flmn Komp Batang">
+  <meta property="og:description" content="Harga transparan untuk instal ulang, upgrade RAM/SSD, servis hardware & perawatan laptop. Konsultasi gratis via WhatsApp.">
+  <meta property="og:url" content="https://www.flmnkomp.com/tarif-servis.html">
+  <meta property="og:image" content="https://www.flmnkomp.com/logo.png">
+  <meta property="og:locale" content="id_ID">
 
-<meta name="description" content="Tarif servis komputer, laptop, dan MacBook di Batang & Pekalongan. Instal ulang, upgrade SSD/RAM, servis hardware dengan harga transparan.">
-<meta name="keywords" content="tarif servis komputer, harga servis laptop, instal ulang Batang, servis laptop Pekalongan, servis macbook Batang">
-<link rel="canonical" href="https://www.flmnkomp.com/tarif-servis.html">
-
-<link rel="icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --accent:#34d399;
-  --muted:#d1d5db;
-  --card:#2d333b;
-  --bg:#181a1f;
-  --text:#f9fafb;
+  --paper:#F3F4F1;
+  --chip:#EAEDE8;
+  --ink:#141B17;
+  --muted:#535E57;
+  --green:#0C6B4B;
+  --green-deep:#08553B;
+  --line:#D6DBD3;
+  --line-dark:#B9C0B7;
+  --amber:#DEA31F;
+  --radius:14px;
+  --maxw:1080px;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  margin:0;
-  font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
-  background:linear-gradient(-45deg,#000,#222,#555,#aaa);
-  background-size:600% 3600%;
-  animation:bg 15s ease infinite;
-  color:var(--text);
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Archivo",system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  font-variation-settings:"wdth" 100;line-height:1.65;font-size:16px;
 }
-@keyframes bg{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+a{color:var(--green)}
+img{max-width:100%}
+
+.topbar{
+  background:var(--ink);color:#DCE4DE;
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;
+  display:flex;justify-content:center;gap:24px;flex-wrap:wrap;text-align:center;
 }
-.container{max-width:1150px;margin:auto;padding:28px}
+.topbar b{color:#7BD8B3;font-weight:600}
 
 header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:24px;
+  position:sticky;top:0;z-index:50;
+  background:rgba(243,244,241,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
 }
-nav a{
-  color:var(--muted);
-  text-decoration:none;
-  margin-left:14px;
+.header-in{
+  max-width:var(--maxw);margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
-nav a:hover{color:var(--accent)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.brand img{width:42px;height:auto;border-radius:9px}
+.brand-name{font-weight:800;font-size:17px;letter-spacing:-.01em;line-height:1.1}
+.brand-sub{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:7px 12px;border-radius:8px}
+nav a:hover{background:var(--chip);color:var(--green)}
+nav a.nav-cta{background:var(--green);color:#fff;font-weight:600}
+nav a.nav-cta:hover{background:var(--green-deep);color:#fff}
 
-h1,h2{color:var(--muted)}
-p{color:var(--muted)}
-
-.section{
-  margin-top:28px;
-  background:rgba(32,36,42,.85);
-  padding:18px;
-  border-radius:14px;
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+section{padding:46px 0 6px}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--green);
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;
 }
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line-dark)}
+h1,h2{font-variation-settings:"wdth" 112;letter-spacing:-.02em;line-height:1.12}
+h1{font-size:clamp(28px,4.8vw,44px);font-weight:850;margin:0 0 14px}
+h2{font-size:clamp(21px,3vw,28px);font-weight:800;margin:0 0 6px}
+.lead{color:var(--muted);font-size:17px;max-width:58ch;margin:0 0 6px}
+.lead strong{color:var(--ink)}
+.sec-desc{color:var(--muted);font-size:14.5px;margin:0 0 18px;max-width:60ch}
 
-.price-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:18px;
-  margin-top:16px;
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 16px;border-radius:10px;text-decoration:none;
+  font-weight:700;font-size:14px;border:1px solid transparent;
+  transition:transform .15s ease, background .15s ease;
 }
+.btn:hover{transform:translateY(-1px)}
+.btn-wa{background:var(--green);color:#fff}
+.btn-wa:hover{background:var(--green-deep)}
 
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:16px}
 .price-card{
-  background:linear-gradient(145deg,#2d333b,#20242a);
-  border-radius:16px;
-  padding:18px;
-  box-shadow:0 12px 30px rgba(0,0,0,.45);
-  position:relative;
-  overflow:hidden;
-  transition:.35s ease;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;position:relative;display:flex;flex-direction:column;
+  transition:transform .15s ease, box-shadow .15s ease;
 }
-.price-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 20px 40px rgba(0,0,0,.65);
-}
-
-.price-card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at top right,rgba(52,211,153,.18),transparent 60%);
-  
-  pointer-events: none;
-}
-
-}
-
+.price-card:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,27,23,.07)}
 .price-tag{
-  position:absolute;
-  top:14px;
-  right:14px;
-  background:var(--accent);
-  color:#111;
-  font-size:11px;
-  padding:5px 10px;
-  border-radius:999px;
-  font-weight:700;
+  position:absolute;top:14px;right:14px;
+  font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;
+  letter-spacing:.1em;background:var(--amber);color:#3A2B05;
+  padding:4px 9px;border-radius:999px;
 }
-
-.price-title{
-  font-size:16px;
-  font-weight:700;
-  margin:0 0 6px;
-}
-
-.price-desc{
-  font-size:13px;
-  color:var(--muted);
-  margin-bottom:12px;
-}
-
+.price-title{font-size:16.5px;font-weight:750;letter-spacing:-.01em;margin:0 0 6px;padding-right:76px}
+.price-desc{font-size:13.5px;color:var(--muted);margin:0 0 14px}
 .price-value{
-  font-size:20px;
-  font-weight:800;
-  color:var(--accent);
+  font-family:"IBM Plex Mono",monospace;font-size:19px;font-weight:600;
+  color:var(--green);margin-top:auto;
+}
+.price-note{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.04em;margin:3px 0 14px}
+.price-card .btn{align-self:flex-start}
+
+.help-strip{
+  margin-top:44px;background:var(--ink);color:#EAF3EC;
+  border-radius:var(--radius);padding:26px 28px;
+  display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+}
+.help-strip h2{color:#fff;margin:0 0 4px}
+.help-strip p{margin:0;color:#9FB7A9;font-size:14.5px}
+
+footer{margin-top:60px;border-top:1px solid var(--line);background:var(--chip)}
+.foot-in{
+  max-width:var(--maxw);margin:0 auto;padding:26px 20px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:13px;color:var(--muted);
+}
+.foot-in .mono{font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+
+.wa-float{
+  position:fixed;right:18px;bottom:18px;z-index:60;
+  background:var(--green);color:#fff;text-decoration:none;
+  display:flex;align-items:center;gap:9px;
+  padding:13px 18px;border-radius:999px;font-weight:700;font-size:14px;
+  box-shadow:0 10px 26px rgba(8,85,59,.35);
+  transition:transform .15s ease;
+}
+.wa-float:hover{transform:translateY(-2px)}
+
+a:focus-visible,.btn:focus-visible,nav a:focus-visible{
+  outline:3px solid var(--amber);outline-offset:2px;border-radius:8px;
 }
 
-.price-note{
-  font-size:12px;
-  color:#9ca3af;
-  margin-top:4px;
+@media(max-width:840px){
+  nav a:not(.nav-cta){display:none}
+  section{padding:36px 0 6px}
+  .help-strip{padding:22px}
 }
-
-.btn-wa{
-  display:inline-block;
-  margin-top:14px;
-  background:var(--accent);
-  color:#111;
-  padding:9px 14px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:700;
-  font-size:14px;
-  position: relative;
-  z-index: 2;
-  
-  position: relative;
-  z-index: 2;
-}
-
-}
-
-footer{
-  text-align:center;
-  margin-top:46px;
-  color:var(--muted);
-  font-size:13px;
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
 }
 </style>
-
 </head>
 
 <body>
-<div class="container">
+
+<div class="topbar">
+  <span>Buka <b>Selasa–Minggu</b></span>
+  <span>Antar-jemput &amp; servis panggilan <b>tersedia</b></span>
+  <span>Batang · Pekalongan · Pemalang · Comal</span>
+</div>
 
 <header>
-   	<div class="brand"><img src="logo.png" width="50" height="47" alt=""/>
-    <div>
-      <div style="font-weight:700;color:var(--text)">Flmn Komp</div>
-      <div style="font-size:12px;color:var(--muted)">Servis Komputer • Laptop • MacBook • Batang</div>
-    </div>
+  <div class="header-in">
+    <a class="brand" href="/">
+      <img src="logo.png" alt="Logo Flmn Komp" width="42" height="40">
+      <span>
+        <span class="brand-name">Flmn Komp</span><br>
+        <span class="brand-sub">Servis Komputer · Laptop · MacBook</span>
+      </span>
+    </a>
+    <nav>
+      <a href="/#services">Layanan</a>
+      <a href="/games.html">Isi Games</a>
+      <a href="/tarif-servis.html">Tarif</a>
+      <a href="/tentang.html">Tentang</a>
+      <a href="/janji.html">Janji</a>
+      <a class="nav-cta" href="https://wa.me/6281392400272" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
   </div>
-  <nav>
-    <a href="/">Beranda</a>
-    <a href="/tarif-servis.html">Tarif Servis</a>
-    <a href="/#alamat">Kontak</a>
-  </nav>
 </header>
 
-<main>
+<main class="wrap">
 
-<section>
-  <h1>Tarif Servis Komputer & Laptop</h1>
-  <p>
-    Daftar harga <strong>servis komputer, laptop, dan MacBook</strong>
-    untuk wilayah <strong>Batang, Pekalongan, Pemalang, dan Comal</strong>.
-    Harga transparan & bisa konsultasi gratis via WhatsApp.
+<section style="padding-bottom:0">
+  <div class="eyebrow">Daftar Tarif</div>
+  <h1>Tarif Servis Komputer &amp; Laptop</h1>
+  <p class="lead">
+    Daftar harga <strong>servis komputer, laptop, dan MacBook</strong> untuk wilayah
+    <strong>Batang, Pekalongan, Pemalang, dan Comal</strong>.
+    Harga transparan &amp; bisa konsultasi gratis via WhatsApp.
   </p>
 </section>
 
 <!-- SOFTWARE -->
-<section class="section">
-<h2>Software & Instalasi</h2>
-<div class="price-grid">
+<section id="software">
+  <div class="eyebrow">SW · Software &amp; Instalasi</div>
+  <div class="price-grid">
 
-<div class="price-card">
-<span class="price-tag">POPULER</span>
-<h3 class="price-title">Instal Ulang Windows</h3>
-<p class="price-desc">Instal OS, driver lengkap & software dasar.</p>
-<div class="price-value">Rp 100.000</div>
-<div class="price-note">Laptop & PC</div>
-<a class="btn-wa" href="https://wa.me/6281392400272">Pesan via WhatsApp</a>
-</div>
+    <div class="price-card">
+      <span class="price-tag">POPULER</span>
+      <h3 class="price-title">Instal Ulang Windows</h3>
+      <p class="price-desc">Instal OS, driver lengkap &amp; software dasar.</p>
+      <div class="price-value">Rp 100.000</div>
+      <div class="price-note">Laptop &amp; PC</div>
+      <a class="btn btn-wa" href="https://wa.me/6281392400272" target="_blank" rel="noopener">Pesan via WhatsApp</a>
+    </div>
 
-<div class="price-card">
-<h3 class="price-title">Instal macOS</h3>
-<p class="price-desc">Install ulang macOS + optimasi sistem.</p>
-<div class="price-value">Rp 200.000</div>
-<div class="price-note">MacBook, iMac, Mac Mini</div>
-<a class="btn-wa" href="https://wa.me/6281392400272">Pesan via WhatsApp</a>
-</div>
+    <div class="price-card">
+      <h3 class="price-title">Instal macOS</h3>
+      <p class="price-desc">Install ulang macOS + optimasi sistem.</p>
+      <div class="price-value">Rp 200.000</div>
+      <div class="price-note">MacBook, iMac, Mac Mini</div>
+      <a class="btn btn-wa" href="https://wa.me/6281392400272" target="_blank" rel="noopener">Pesan via WhatsApp</a>
+    </div>
 
-<div class="price-card">
-<h3 class="price-title">Install Software</h3>
-<p class="price-desc">Office, Adobe, utility, dll.</p>
-<div class="price-value">Rp 50.000</div>
-<div class="price-note">Per paket</div>
-<a class="btn-wa" href="https://wa.me/6281392400272">Pesan via WhatsApp</a>
-</div>
+    <div class="price-card">
+      <h3 class="price-title">Install Software</h3>
+      <p class="price-desc">Office, Adobe, utility, dll.</p>
+      <div class="price-value">Rp 50.000</div>
+      <div class="price-note">Per paket</div>
+      <a class="btn btn-wa" href="https://wa.me/6281392400272" target="_blank" rel="noopener">Pesan via WhatsApp</a>
+    </div>
 
-<div class="price-card">
-<h3 class="price-title">Backup / Recovery Data</h3>
-<p class="price-desc">Penyelamatan data (jika memungkinkan).</p>
-<div class="price-value">Rp 100.000</div>
-<div class="price-note">Tergantung kondisi</div>
-<a class="btn-wa" href="https://wa.me/6281392400272">Pesan via WhatsApp</a>
-</div>
+    <div class="price-card">
+      <h3 class="price-title">Backup / Recovery Data</h3>
+      <p class="price-desc">Penyelamatan data (jika memungkinkan).</p>
+      <div class="price-value">Rp 100.000</div>
+      <div class="price-note">Tergantung kondisi</div>
+      <a class="btn btn-wa" href="https://wa.me/6281392400272" target="_blank" rel="noopener">Pesan via WhatsApp</a>
+    </div>
 
-</div>
+  </div>
 </section>
 
 <!-- HARDWARE -->
-<section class="section">
-<h2>Upgrade & Hardware</h2>
-<div class="price-grid">
+<section id="hardware">
+  <div class="eyebrow">HW · Upgrade &amp; Hardware</div>
+  <div class="price-grid">
 
-<div class="price-card">
-<span class="price-tag">BEST DEAL</span>
-<h3 class="price-title">Upgrade RAM</h3>
-<p class="price-desc">Pemasangan & pengecekan kompatibilitas.</p>
-<div class="price-value">Rp 50.000</div>
-<div class="price-note">+ harga RAM</div>
-<a class="btn-wa" href="https://wa.me/6281392400272">Pesan via WhatsApp</a>
-</div>
+    <div class="price-card">
+      <span class="price-tag">BEST DEAL</span>
+      <h3 class="price-title">Upgrade RAM</h3>
+      <p class="price-desc">Pemasangan &amp; pengecekan kompatibilitas.</p>
+      <div class="price-value">Rp 50.000</div>
+      <div class="price-note">+ harga RAM</div>
+      <a class="btn btn-wa" href="https://wa.me/6281392400272" target="_blank" rel="noopener">Pesan via WhatsApp</a>
+    </div>
 
-<div class="price-card">
-<h3 class="price-title">Upgrade SSD</h3>
-<p class="price-desc">Cloning OS & peningkatan performa.</p>
-<div class="price-value">Rp 50.000</div>
-<div class="price-note">+ harga SSD</div>
-<a class="btn-wa" href="https://wa.me/6281392400272">Pesan via WhatsApp</a>
-</div>
+    <div class="price-card">
+      <h3 class="price-title">Upgrade SSD</h3>
+      <p class="price-desc">Cloning OS &amp; peningkatan performa.</p>
+      <div class="price-value">Rp 50.000</div>
+      <div class="price-note">+ harga SSD</div>
+      <a class="btn btn-wa" href="https://wa.me/6281392400272" target="_blank" rel="noopener">Pesan via WhatsApp</a>
+    </div>
 
-<div class="price-card">
-<h3 class="price-title">Ganti LCD Laptop</h3>
-<p class="price-desc">Layar pecah, blank, bergaris.</p>
-<div class="price-value">Hubungi Kami</div>
-<div class="price-note">Sesuai tipe</div>
-<a class="btn-wa" href="https://wa.me/6281392400272">Cek Harga</a>
-</div>
+    <div class="price-card">
+      <h3 class="price-title">Ganti LCD Laptop</h3>
+      <p class="price-desc">Layar pecah, blank, bergaris.</p>
+      <div class="price-value">Hubungi Kami</div>
+      <div class="price-note">Sesuai tipe</div>
+      <a class="btn btn-wa" href="https://wa.me/6281392400272" target="_blank" rel="noopener">Cek Harga</a>
+    </div>
 
-<div class="price-card">
-<h3 class="price-title">Servis Keyboard</h3>
-<p class="price-desc">Tombol rusak, mati, atau error.</p>
-<div class="price-value">Mulai Rp 20.000</div>
-<div class="price-note">Tergantung model</div>
-<a class="btn-wa" href="https://wa.me/6281392400272">Pesan via WhatsApp</a>
-</div>
+    <div class="price-card">
+      <h3 class="price-title">Servis Keyboard</h3>
+      <p class="price-desc">Tombol rusak, mati, atau error.</p>
+      <div class="price-value">Mulai Rp 20.000</div>
+      <div class="price-note">Tergantung model</div>
+      <a class="btn btn-wa" href="https://wa.me/6281392400272" target="_blank" rel="noopener">Pesan via WhatsApp</a>
+    </div>
 
-</div>
+  </div>
 </section>
 
-<section class="section">
-  <h2>Bersih-bersih & Perawatan</h2>
-  <p style="color:var(--muted);font-size:14px">
-    Layanan pembersihan bagian dalam perangkat untuk mengatasi
-    panas berlebih, debu menumpuk, dan menjaga performa tetap optimal.
+<!-- PERAWATAN -->
+<section id="perawatan">
+  <div class="eyebrow">MTC · Bersih-bersih &amp; Perawatan</div>
+  <p class="sec-desc">
+    Layanan pembersihan bagian dalam perangkat untuk mengatasi panas berlebih,
+    debu menumpuk, dan menjaga performa tetap optimal.
   </p>
-
   <div class="price-grid">
 
     <div class="price-card">
       <span class="price-tag">REKOMENDASI</span>
       <h3 class="price-title">Bersih-bersih Laptop</h3>
-      <p class="price-desc">
-        Pembersihan kipas, heatsink, dan bagian dalam laptop
-        tanpa bongkar layar.
-      </p>
+      <p class="price-desc">Pembersihan kipas, heatsink, dan bagian dalam laptop tanpa bongkar layar.</p>
       <div class="price-value">Rp 150.000</div>
-      <div class="price-note">Laptop • Anti Overheat</div>
-      <a class="btn-wa" href="https://wa.me/6281392400272">
-        Pesan via WhatsApp
-      </a>
+      <div class="price-note">Laptop · Anti overheat</div>
+      <a class="btn btn-wa" href="https://wa.me/6281392400272" target="_blank" rel="noopener">Pesan via WhatsApp</a>
     </div>
 
     <div class="price-card">
       <h3 class="price-title">Bersih-bersih Komputer / PC</h3>
-      <p class="price-desc">
-        Membersihkan CPU, kipas, PSU, dan casing
-        agar sirkulasi udara kembali maksimal.
-      </p>
+      <p class="price-desc">Membersihkan CPU, kipas, PSU, dan casing agar sirkulasi udara kembali maksimal.</p>
       <div class="price-value">Rp 100.000</div>
-      <div class="price-note">PC / Komputer Rakitan</div>
-      <a class="btn-wa" href="https://wa.me/6281392400272">
-        Pesan via WhatsApp
-      </a>
+      <div class="price-note">PC / Komputer rakitan</div>
+      <a class="btn btn-wa" href="https://wa.me/6281392400272" target="_blank" rel="noopener">Pesan via WhatsApp</a>
     </div>
 
+  </div>
+
+  <div class="help-strip">
+    <div>
+      <h2>Belum yakin kerusakannya apa?</h2>
+      <p>Ceritakan gejalanya lewat WhatsApp — pengecekan awal &amp; konsultasi gratis.</p>
+    </div>
+    <a class="btn btn-wa" href="https://wa.me/6281392400272" target="_blank" rel="noopener">💬 Konsultasi Gratis</a>
   </div>
 </section>
 
 </main>
 
-<footer>
-© 2025 Flmn Komp • Servis Komputer & Laptop Batang
-</footer>
+<a class="wa-float" href="https://wa.me/6281392400272" target="_blank" rel="noopener" aria-label="Chat WhatsApp Flmn Komp">💬 Chat WhatsApp</a>
 
-</div>
+<footer>
+  <div class="foot-in">
+    <span>© 2022–2026 Flmn Komp · Servis Komputer &amp; Laptop Batang</span>
+    <span class="mono">*Harga dapat berubah sesuai kondisi perangkat</span>
+  </div>
+</footer>
 
 <script type="application/ld+json">
 {
@@ -331,83 +349,46 @@ footer{
         "addressLocality": "Batang"
       },
       "areaServed": [
-        {
-          "@type": "AdministrativeArea",
-          "name": "Batang"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Pekalongan"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Pemalang"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Comal"
-        }
+        {"@type": "AdministrativeArea", "name": "Batang"},
+        {"@type": "AdministrativeArea", "name": "Pekalongan"},
+        {"@type": "AdministrativeArea", "name": "Pemalang"},
+        {"@type": "AdministrativeArea", "name": "Comal"}
       ],
-      "sameAs": [
-        "https://wa.me/6281392400272"
-      ]
+      "sameAs": ["https://wa.me/6281392400272"]
     },
-
     {
       "@type": "Product",
       "name": "Instal Ulang Windows",
       "brand": "Flmn Komp",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "IDR",
-        "price": "100000",
-        "availability": "https://schema.org/InStock"
-      }
+      "offers": {"@type": "Offer", "priceCurrency": "IDR", "price": "100000", "availability": "https://schema.org/InStock"}
     },
     {
       "@type": "Product",
       "name": "Instal macOS MacBook",
       "brand": "Flmn Komp",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "IDR",
-        "price": "200000"
-      }
+      "offers": {"@type": "Offer", "priceCurrency": "IDR", "price": "200000"}
     },
     {
       "@type": "Product",
       "name": "Upgrade RAM Laptop / PC",
       "brand": "Flmn Komp",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "IDR",
-        "price": "50000"
-      }
+      "offers": {"@type": "Offer", "priceCurrency": "IDR", "price": "50000"}
     },
     {
       "@type": "Product",
       "name": "Bersih-bersih Laptop",
       "brand": "Flmn Komp",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "IDR",
-        "price": "150000"
-      }
+      "offers": {"@type": "Offer", "priceCurrency": "IDR", "price": "150000"}
     },
     {
       "@type": "Product",
       "name": "Bersih-bersih Komputer / PC",
       "brand": "Flmn Komp",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "IDR",
-        "price": "100000"
-      }
+      "offers": {"@type": "Offer", "priceCurrency": "IDR", "price": "100000"}
     }
   ]
 }
 </script>
-
 
 </body>
 </html>

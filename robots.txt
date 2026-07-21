@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://flmnkomp.github.io/flmnkomp/sitemap.xml
+Sitemap: https://www.flmnkomp.com/sitemap.xml

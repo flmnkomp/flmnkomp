@@ -1,0 +1,9 @@
+{
+  "2026-07-25": [
+    { "jam": "09.00–11.00", "label": "Servis laptop", "status": "terisi" },
+    { "jam": "13.00–15.00", "label": "Rakit PC", "status": "terisi" }
+  ],
+  "2026-07-28": [
+    { "jam": "10.00–12.00", "label": "Instal ulang + upgrade SSD", "status": "terisi" }
+  ]
+}

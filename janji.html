@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Buat Janji Servis | Flmn Komp Batang — Booking Servis Komputer & Laptop</title>
+  <meta name="description" content="Buat janji servis komputer, laptop, dan MacBook di Flmn Komp Batang. Pilih tanggal di kalender, cek jadwal kosong, dan konfirmasi langsung via WhatsApp.">
+  <meta name="keywords" content="janji servis komputer batang, booking servis laptop batang, jadwal servis komputer pekalongan, appointment servis laptop">
+  <link rel="canonical" href="https://www.flmnkomp.com/janji.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Buat Janji Servis — Flmn Komp Batang">
+  <meta property="og:description" content="Pilih tanggal, cek jadwal kosong, dan buat janji servis langsung via WhatsApp.">
+  <meta property="og:url" content="https://www.flmnkomp.com/janji.html">
+  <meta property="og:image" content="https://www.flmnkomp.com/logo.png">
+  <meta property="og:locale" content="id_ID">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#F3F4F1;
+  --chip:#EAEDE8;
+  --ink:#141B17;
+  --muted:#535E57;
+  --green:#0C6B4B;
+  --green-deep:#08553B;
+  --green-soft:#DCEDE4;
+  --line:#D6DBD3;
+  --line-dark:#B9C0B7;
+  --amber:#DEA31F;
+  --amber-soft:#F7ECD2;
+  --radius:14px;
+  --maxw:1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Archivo",system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  font-variation-settings:"wdth" 100;line-height:1.65;font-size:16px;
+}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+a{color:var(--green)}
+img{max-width:100%}
+
+.topbar{
+  background:var(--ink);color:#DCE4DE;
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;
+  display:flex;justify-content:center;gap:24px;flex-wrap:wrap;text-align:center;
+}
+.topbar b{color:#7BD8B3;font-weight:600}
+
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(243,244,241,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-in{
+  max-width:var(--maxw);margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.brand img{width:42px;height:auto;border-radius:9px}
+.brand-name{font-weight:800;font-size:17px;letter-spacing:-.01em;line-height:1.1}
+.brand-sub{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:7px 12px;border-radius:8px}
+nav a:hover{background:var(--chip);color:var(--green)}
+nav a.nav-cta{background:var(--green);color:#fff;font-weight:600}
+nav a.nav-cta:hover{background:var(--green-deep);color:#fff}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+section{padding:46px 0 6px}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--green);
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line-dark)}
+h1,h2{font-variation-settings:"wdth" 112;letter-spacing:-.02em;line-height:1.12}
+h1{font-size:clamp(28px,4.8vw,44px);font-weight:850;margin:0 0 14px}
+h2{font-size:clamp(20px,2.8vw,26px);font-weight:800;margin:0 0 14px}
+.lead{color:var(--muted);font-size:16.5px;max-width:58ch;margin:0 0 8px}
+.lead strong{color:var(--ink)}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 22px;border-radius:11px;text-decoration:none;
+  font-weight:700;font-size:15px;border:none;cursor:pointer;
+  font-family:inherit;
+  transition:transform .15s ease, background .15s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-wa{background:var(--green);color:#fff}
+.btn-wa:hover{background:var(--green-deep)}
+
+.booking-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;align-items:start;margin-top:8px}
+@media(max-width:900px){.booking-grid{grid-template-columns:1fr}}
+
+/* ---------- form (kartu janji) ---------- */
+.ticket{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:0 14px 34px rgba(20,27,23,.08);overflow:hidden;
+}
+.ticket-head{
+  background:var(--ink);color:#EAF3EC;padding:13px 20px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+}
+.ticket-head .dot{color:#7BD8B3}
+.ticket-body{padding:20px}
+.field{margin-bottom:14px}
+.field label{
+  display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  margin-bottom:6px;
+}
+.field input,.field textarea,.field select{
+  width:100%;padding:11px 13px;border:1px solid var(--line-dark);
+  border-radius:9px;background:var(--paper);color:var(--ink);
+  font-family:inherit;font-size:15px;
+}
+.field textarea{min-height:84px;resize:vertical}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:2px solid var(--green);outline-offset:1px;border-color:var(--green);
+}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:480px){.field-row{grid-template-columns:1fr}}
+.form-note{font-size:12.5px;color:var(--muted);margin:10px 0 0}
+.form-error{
+  display:none;background:var(--amber-soft);border:1px solid var(--amber);
+  color:#5C440A;border-radius:9px;padding:10px 13px;font-size:13.5px;margin-bottom:12px;
+}
+.form-error.show{display:block}
+#btnKirim{width:100%}
+
+/* ---------- kalender ---------- */
+.cal-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:0 14px 34px rgba(20,27,23,.08);overflow:hidden;
+}
+.cal-head{
+  background:var(--ink);color:#EAF3EC;padding:13px 20px;
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+}
+.cal-title{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.cal-nav{display:flex;gap:6px}
+.cal-nav button{
+  background:transparent;border:1px solid #3A4A40;color:#EAF3EC;
+  border-radius:8px;width:34px;height:34px;font-size:16px;cursor:pointer;
+  font-family:"IBM Plex Mono",monospace;
+}
+.cal-nav button:hover:not(:disabled){background:#243129}
+.cal-nav button:disabled{opacity:.35;cursor:default}
+.cal-body{padding:16px 16px 6px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-dow{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);text-align:center;padding:6px 0;
+}
+.cal-day{
+  position:relative;aspect-ratio:1/.92;border:1px solid transparent;border-radius:9px;
+  background:transparent;font-family:inherit;font-size:14px;color:var(--ink);
+  cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+}
+.cal-day:hover:not(:disabled){background:var(--chip)}
+.cal-day:disabled{color:#C2C8C0;cursor:default}
+.cal-day.is-today{border-color:var(--green);font-weight:700}
+.cal-day.is-selected{background:var(--green);color:#fff;font-weight:700}
+.cal-day.is-selected .cal-dot{background:#fff}
+.cal-dot{width:5px;height:5px;border-radius:50%;background:var(--amber)}
+.cal-dot.free{background:transparent}
+.cal-legend{
+  display:flex;gap:18px;flex-wrap:wrap;padding:10px 20px 16px;
+  font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line-dark);margin-top:10px;
+}
+.cal-legend span{display:inline-flex;align-items:center;gap:7px}
+.lg-dot{width:8px;height:8px;border-radius:50%}
+.lg-busy{background:var(--amber)}
+.lg-today{width:12px;height:12px;border:2px solid var(--green);border-radius:4px;background:transparent}
+
+/* detail hari terpilih */
+.day-detail{padding:0 20px 20px}
+.day-detail h3{
+  margin:6px 0 10px;font-size:15px;font-weight:750;
+}
+.dd-empty{
+  background:var(--green-soft);border:1px solid #B9D8C7;color:var(--green-deep);
+  border-radius:9px;padding:11px 14px;font-size:14px;
+}
+.dd-item{
+  display:flex;gap:12px;align-items:baseline;
+  padding:9px 0;border-bottom:1px dashed var(--line-dark);font-size:14px;
+}
+.dd-item:last-child{border-bottom:none}
+.dd-jam{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;color:var(--green);white-space:nowrap;min-width:88px}
+.dd-label{color:var(--ink)}
+.dd-status{
+  margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:10px;
+  letter-spacing:.08em;text-transform:uppercase;
+  background:var(--amber-soft);color:#6B4E0B;border:1px solid var(--amber);
+  padding:3px 8px;border-radius:999px;white-space:nowrap;
+}
+.dd-hint{font-size:12.5px;color:var(--muted);margin:12px 0 0}
+
+/* cara kerja */
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.how-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.how-num{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.12em;
+  color:var(--green);background:var(--chip);border:1px solid var(--line-dark);
+  display:inline-block;padding:2px 8px;border-radius:5px;margin-bottom:10px;
+}
+.how-card h3{margin:0 0 6px;font-size:15.5px;font-weight:750}
+.how-card p{margin:0;color:var(--muted);font-size:13.5px}
+
+footer{margin-top:60px;border-top:1px solid var(--line);background:var(--chip)}
+.foot-in{
+  max-width:var(--maxw);margin:0 auto;padding:26px 20px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:13px;color:var(--muted);
+}
+.foot-in .mono{font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+
+.wa-float{
+  position:fixed;right:18px;bottom:18px;z-index:60;
+  background:var(--green);color:#fff;text-decoration:none;
+  display:flex;align-items:center;gap:9px;
+  padding:13px 18px;border-radius:999px;font-weight:700;font-size:14px;
+  box-shadow:0 10px 26px rgba(8,85,59,.35);
+  transition:transform .15s ease;
+}
+.wa-float:hover{transform:translateY(-2px)}
+
+a:focus-visible,.btn:focus-visible,nav a:focus-visible,.cal-day:focus-visible,.cal-nav button:focus-visible{
+  outline:3px solid var(--amber);outline-offset:2px;border-radius:8px;
+}
+
+@media(max-width:840px){
+  nav a:not(.nav-cta){display:none}
+  section{padding:36px 0 6px}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <span>Buka <b>Selasa–Minggu</b></span>
+  <span>Janji servis <b>gratis konsultasi</b></span>
+  <span>Batang · Pekalongan · Pemalang · Comal</span>
+</div>
+
+<header>
+  <div class="header-in">
+    <a class="brand" href="/">
+      <img src="logo.png" alt="Logo Flmn Komp" width="42" height="40">
+      <span>
+        <span class="brand-name">Flmn Komp</span><br>
+        <span class="brand-sub">Servis Komputer · Laptop · MacBook</span>
+      </span>
+    </a>
+    <nav>
+      <a href="/#services">Layanan</a>
+      <a href="/games.html">Isi Games</a>
+      <a href="/tarif-servis.html">Tarif</a>
+      <a href="/tentang.html">Tentang</a>
+      <a href="/janji.html">Janji</a>
+      <a class="nav-cta" href="https://wa.me/6281392400272" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section style="padding-bottom:0">
+  <div class="eyebrow">Janji Servis</div>
+  <h1>Buat Janji Servis ke Lokasi Kami</h1>
+  <p class="lead">
+    Isi form di bawah untuk membuat janji datang ke lokasi Flmn Komp.
+    Sebelum memilih hari, <strong>cek dulu kalender di samping</strong> — tanggal bertanda titik
+    artinya sudah ada jadwal pekerjaan. Janji akan dikirim &amp; dikonfirmasi lewat WhatsApp.
+  </p>
+</section>
+
+<section style="padding-top:24px">
+  <div class="booking-grid">
+
+    <!-- ================= FORM ================= -->
+    <div class="ticket">
+      <div class="ticket-head">
+        <span><span class="dot">●</span> Form Janji Servis</span>
+        <span>FLMN-KOMP</span>
+      </div>
+      <div class="ticket-body">
+        <div class="form-error" id="formError"></div>
+
+        <div class="field">
+          <label for="fNama">Nama</label>
+          <input type="text" id="fNama" placeholder="Nama lengkap" autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="fWA">Nomor HP / WhatsApp</label>
+          <input type="tel" id="fWA" placeholder="08xxxxxxxxxx" autocomplete="tel" inputmode="tel">
+        </div>
+
+        <div class="field">
+          <label for="fKeluhan">Keluhan / Kebutuhan Servis</label>
+          <textarea id="fKeluhan" placeholder="Contoh: Laptop lemot, ingin upgrade SSD + instal ulang Windows"></textarea>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="fTanggal">Hari &amp; Tanggal</label>
+            <input type="date" id="fTanggal" min="2026-01-01" max="2026-12-31">
+          </div>
+          <div class="field">
+            <label for="fWaktu">Perkiraan Waktu</label>
+            <select id="fWaktu">
+              <option value="Pagi (09.00–12.00)">Pagi (09.00–12.00)</option>
+              <option value="Siang (12.00–15.00)">Siang (12.00–15.00)</option>
+              <option value="Sore (15.00–18.00)">Sore (15.00–18.00)</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn btn-wa" id="btnKirim" type="button">Buat Janji</button>
+        <p class="form-note">
+          Setelah klik, WhatsApp akan terbuka dengan pesan janji yang sudah terisi otomatis —
+          tinggal tekan kirim. Janji dianggap resmi setelah kami balas &amp; konfirmasi.
+        </p>
+      </div>
+    </div>
+
+    <!-- ================= KALENDER ================= -->
+    <div class="cal-card">
+      <div class="cal-head">
+        <div class="cal-nav"><button type="button" id="calPrev" aria-label="Bulan sebelumnya">‹</button></div>
+        <div class="cal-title" id="calTitle">Kalender 2026</div>
+        <div class="cal-nav"><button type="button" id="calNext" aria-label="Bulan berikutnya">›</button></div>
+      </div>
+      <div class="cal-body">
+        <div class="cal-grid" id="calDow"></div>
+        <div class="cal-grid" id="calGrid"></div>
+      </div>
+      <div class="cal-legend">
+        <span><span class="lg-dot lg-busy"></span> Ada jadwal</span>
+        <span><span class="lg-today"></span> Hari ini</span>
+        <span>Klik tanggal untuk cek detail</span>
+      </div>
+      <div class="day-detail" id="dayDetail" hidden>
+        <h3 id="ddTitle"></h3>
+        <div id="ddList"></div>
+        <p class="dd-hint" id="ddHint"></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CARA KERJA ================= -->
+<section id="cara-kerja">
+  <div class="eyebrow">Cara Kerja</div>
+  <h2>Tiga langkah, langsung terjadwal</h2>
+  <div class="how-grid">
+    <div class="how-card">
+      <span class="how-num">LANGKAH 1</span>
+      <h3>Cek kalender</h3>
+      <p>Klik tanggal yang kamu inginkan untuk melihat apakah kami masih ada pekerjaan servis atau kegiatan lain di hari itu.</p>
+    </div>
+    <div class="how-card">
+      <span class="how-num">LANGKAH 2</span>
+      <h3>Isi form janji</h3>
+      <p>Tulis nama, nomor WhatsApp, keluhan servis, lalu pilih hari dan perkiraan waktu kedatangan.</p>
+    </div>
+    <div class="how-card">
+      <span class="how-num">LANGKAH 3</span>
+      <h3>Konfirmasi via WhatsApp</h3>
+      <p>Pesan janji terkirim otomatis ke WhatsApp kami. Setelah kami balas dan konfirmasi, janji kamu masuk ke kalender.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<a class="wa-float" href="https://wa.me/6281392400272" target="_blank" rel="noopener" aria-label="Chat WhatsApp Flmn Komp">💬 Chat WhatsApp</a>
+
+<footer>
+  <div class="foot-in">
+    <span>© 2022–2026 Flmn Komp · Servis Komputer &amp; Laptop Batang</span>
+    <span class="mono">Janji servis · Konfirmasi via WhatsApp</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var NOMOR_WA = "6281392400272";
+  var TAHUN = 2026;
+
+  var NAMA_BULAN = ["Januari","Februari","Maret","April","Mei","Juni",
+                    "Juli","Agustus","September","Oktober","November","Desember"];
+  var NAMA_HARI  = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+  var DOW_LABEL  = ["Sen","Sel","Rab","Kam","Jum","Sab","Min"]; // mulai Senin
+
+  // Jadwal cadangan (dipakai kalau jadwal.json tidak ditemukan / dibuka lokal)
+  var jadwal = {
+    "2026-07-25": [
+      { "jam": "09.00–11.00", "label": "Servis laptop", "status": "terisi" },
+      { "jam": "13.00–15.00", "label": "Rakit PC", "status": "terisi" }
+    ],
+    "2026-07-28": [
+      { "jam": "10.00–12.00", "label": "Instal ulang + upgrade SSD", "status": "terisi" }
+    ]
+  };
+
+  // Muat jadwal asli dari jadwal.json (di-update oleh pemilik)
+  fetch("jadwal.json", { cache: "no-store" })
+    .then(function(r){ if(!r.ok) throw new Error("not found"); return r.json(); })
+    .then(function(data){ jadwal = data || {}; render(); if(selectedKey) showDetail(selectedKey); })
+    .catch(function(){ /* pakai jadwal cadangan */ });
+
+  var today = new Date();
+  var curMonth = (today.getFullYear() === TAHUN) ? today.getMonth() : 0;
+  var selectedKey = null;
+
+  var elGrid   = document.getElementById("calGrid");
+  var elDow    = document.getElementById("calDow");
+  var elTitle  = document.getElementById("calTitle");
+  var elPrev   = document.getElementById("calPrev");
+  var elNext   = document.getElementById("calNext");
+  var elDetail = document.getElementById("dayDetail");
+  var elDdT    = document.getElementById("ddTitle");
+  var elDdL    = document.getElementById("ddList");
+  var elDdH    = document.getElementById("ddHint");
+  var elTgl    = document.getElementById("fTanggal");
+
+  DOW_LABEL.forEach(function(d){
+    var s = document.createElement("div");
+    s.className = "cal-dow"; s.textContent = d;
+    elDow.appendChild(s);
+  });
+
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function keyOf(y,m,d){ return y + "-" + pad(m+1) + "-" + pad(d); }
+
+  function render(){
+    elTitle.textContent = NAMA_BULAN[curMonth] + " " + TAHUN;
+    elPrev.disabled = (curMonth === 0);
+    elNext.disabled = (curMonth === 11);
+    elGrid.innerHTML = "";
+
+    var first = new Date(TAHUN, curMonth, 1);
+    var days  = new Date(TAHUN, curMonth + 1, 0).getDate();
+    var lead  = (first.getDay() + 6) % 7; // Senin = 0
+
+    for (var i = 0; i < lead; i++){
+      elGrid.appendChild(document.createElement("div"));
+    }
+    for (var d = 1; d <= days; d++){
+      var key = keyOf(TAHUN, curMonth, d);
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "cal-day";
+      btn.dataset.key = key;
+
+      var num = document.createElement("span");
+      num.textContent = d;
+      btn.appendChild(num);
+
+      var dot = document.createElement("span");
+      dot.className = "cal-dot" + (jadwal[key] && jadwal[key].length ? "" : " free");
+      btn.appendChild(dot);
+
+      var isToday = (today.getFullYear() === TAHUN && today.getMonth() === curMonth && today.getDate() === d);
+      if (isToday) btn.classList.add("is-today");
+      if (key === selectedKey) btn.classList.add("is-selected");
+
+      var isPast = new Date(TAHUN, curMonth, d, 23, 59) < today;
+      if (isPast && !isToday){
+        btn.disabled = true;
+      } else {
+        btn.addEventListener("click", onPick);
+      }
+      var cnt = (jadwal[key] || []).length;
+      btn.setAttribute("aria-label", d + " " + NAMA_BULAN[curMonth] + " " + TAHUN +
+        (cnt ? ", ada " + cnt + " jadwal" : ", belum ada jadwal"));
+
+      elGrid.appendChild(btn);
+    }
+  }
+
+  function onPick(e){
+    var key = e.currentTarget.dataset.key;
+    selectedKey = key;
+    elTgl.value = key; // isi tanggal di form otomatis
+    render();
+    showDetail(key);
+  }
+
+  function showDetail(key){
+    var parts = key.split("-");
+    var dt = new Date(+parts[0], +parts[1]-1, +parts[2]);
+    var label = NAMA_HARI[dt.getDay()] + ", " + dt.getDate() + " " + NAMA_BULAN[dt.getMonth()] + " " + dt.getFullYear();
+
+    elDetail.hidden = false;
+    elDdT.textContent = "Jadwal " + label;
+    elDdL.innerHTML = "";
+
+    var items = jadwal[key] || [];
+    if (!items.length){
+      var ok = document.createElement("div");
+      ok.className = "dd-empty";
+      ok.textContent = "✓ Belum ada jadwal di hari ini — silakan buat janji, kemungkinan besar kami longgar.";
+      elDdL.appendChild(ok);
+      elDdH.textContent = "Tanggal sudah terisi otomatis di form. Lengkapi data lalu kirim via WhatsApp.";
+    } else {
+      items.forEach(function(it){
+        var row = document.createElement("div");
+        row.className = "dd-item";
+        var jam = document.createElement("span");
+        jam.className = "dd-jam"; jam.textContent = it.jam || "-";
+        var lab = document.createElement("span");
+        lab.className = "dd-label"; lab.textContent = it.label || "Terisi";
+        var st = document.createElement("span");
+        st.className = "dd-status"; st.textContent = it.status || "terisi";
+        row.appendChild(jam); row.appendChild(lab); row.appendChild(st);
+        elDdL.appendChild(row);
+      });
+      elDdH.textContent = "Masih bisa buat janji di luar jam di atas — kami konfirmasi ketersediaannya via WhatsApp.";
+    }
+  }
+
+  elPrev.addEventListener("click", function(){ if(curMonth > 0){ curMonth--; render(); } });
+  elNext.addEventListener("click", function(){ if(curMonth < 11){ curMonth++; render(); } });
+
+  // ---------- form ----------
+  var elErr = document.getElementById("formError");
+  document.getElementById("btnKirim").addEventListener("click", function(){
+    var nama    = document.getElementById("fNama").value.trim();
+    var wa      = document.getElementById("fWA").value.trim();
+    var keluhan = document.getElementById("fKeluhan").value.trim();
+    var tanggal = elTgl.value;
+    var waktu   = document.getElementById("fWaktu").value;
+
+    var missing = [];
+    if (!nama) missing.push("nama");
+    if (!wa) missing.push("nomor WhatsApp");
+    if (!keluhan) missing.push("keluhan");
+    if (!tanggal) missing.push("tanggal");
+
+    if (missing.length){
+      elErr.textContent = "Mohon lengkapi dulu: " + missing.join(", ") + ".";
+      elErr.classList.add("show");
+      return;
+    }
+    elErr.classList.remove("show");
+
+    var p = tanggal.split("-");
+    var dt = new Date(+p[0], +p[1]-1, +p[2]);
+    var tglLabel = NAMA_HARI[dt.getDay()] + ", " + dt.getDate() + " " + NAMA_BULAN[dt.getMonth()] + " " + dt.getFullYear();
+
+    var pesan =
+      "Halo Flmn Komp, saya ingin membuat *janji servis* datang ke lokasi.\n\n" +
+      "Nama: " + nama + "\n" +
+      "No. WA: " + wa + "\n" +
+      "Keluhan: " + keluhan + "\n" +
+      "Hari/Tanggal: " + tglLabel + "\n" +
+      "Waktu: " + waktu + "\n\n" +
+      "Mohon konfirmasinya. Terima kasih 🙏";
+
+    window.open("https://wa.me/" + NOMOR_WA + "?text=" + encodeURIComponent(pesan), "_blank");
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>

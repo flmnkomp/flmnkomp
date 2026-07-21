@@ -1,62 +1,282 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta name="keywords" content="servis komputer, servis laptop, laptop service, computer service, macbook service, servis komputer Batang, servis laptop Batang, rakit pc batang, rakit pc pekalongan, rakit pc comal, rakit pc pemalang">
-<link rel="canonical" href="https://www.flmnkomp.com">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Flmn Komp — Servis Komputer, Laptop dan Rakit PC | Batang, Pekalongan, Pemalang, Comal</title>
   <meta name="description" content="Servis komputer dan laptop serta Rakit PC di Batang, Pekalongan, Pemalang, dan Comal. Instal ulang, upgrade RAM/SSD, servis MacBook, perbaikan hardware & software, serta layanan antar-jemput dan panggilan ke rumah.">
+  <meta name="keywords" content="servis komputer, servis laptop, laptop service, computer service, macbook service, servis komputer Batang, servis laptop Batang, rakit pc batang, rakit pc pekalongan, rakit pc comal, rakit pc pemalang">
   <meta name="author" content="Flmn Komp">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<meta name="google-site-verification" content="K2iLqFK6UyCWRewiBg0cvv47C2J1287BPZPeWEAenCc" />
+  <link rel="canonical" href="https://www.flmnkomp.com">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta name="google-site-verification" content="K2iLqFK6UyCWRewiBg0cvv47C2J1287BPZPeWEAenCc" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Flmn Komp — Servis Komputer, Laptop & Rakit PC di Batang">
+  <meta property="og:description" content="Servis komputer, laptop, MacBook & Rakit PC untuk Batang, Pekalongan, Pemalang, dan Comal. Bergaransi, transparan, bisa antar-jemput.">
+  <meta property="og:url" content="https://www.flmnkomp.com">
+  <meta property="og:image" content="https://www.flmnkomp.com/logo.png">
+  <meta property="og:locale" content="id_ID">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
 :root{
-  --accent:#34d399;
-  --muted:#d1d5db;
-  --card:#2d333b;
-  --bg:#181a1f;
-  --text:#f9fafb;
+  --paper:#F3F4F1;
+  --chip:#EAEDE8;
+  --ink:#141B17;
+  --muted:#535E57;
+  --green:#0C6B4B;
+  --green-deep:#08553B;
+  --line:#D6DBD3;
+  --line-dark:#B9C0B7;
+  --amber:#DEA31F;
+  --radius:14px;
+  --maxw:1080px;
 }
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:var(--text)}
+html{scroll-behavior:smooth}
 body{
-  line-height:1.6;
-  background: linear-gradient(-45deg, #000000, #222222, #555555, #aaaaaa);
-  background-size: 600% 3600%;
-  animation: moveBG 15s ease infinite;
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Archivo",system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  font-variation-settings:"wdth" 100;
+  line-height:1.65;
+  font-size:16px;
 }
-@keyframes moveBG{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+a{color:var(--green)}
+img{max-width:100%}
+
+/* ---------- top bar ---------- */
+.topbar{
+  background:var(--ink);
+  color:#DCE4DE;
+  font-family:"IBM Plex Mono",monospace;
+  font-size:11.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:7px 16px;
+  display:flex;justify-content:center;gap:24px;flex-wrap:wrap;text-align:center;
 }
-.container{max-width:1100px;margin:0 auto;padding:28px}
-header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:54px;height:54px;border-radius:8px;background:linear-gradient(135deg,var(--card),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
-nav a{margin-left:14px;color:var(--muted);text-decoration:none}
-nav a:hover{color:var(--accent)}
-.hero{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:22px}
-.hero-left{flex:1;min-width:260px}
-.hero-right{flex:1;min-width:260px}
-h1{font-size:28px;margin:0 0 8px;color:var(--muted)}
-h2{color:var(--muted)}
-p.lead{color:var(--muted);margin:0 0 18px}
-.cta{display:inline-block;background:var(--accent);color:#111;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600}
-.secondary{background:#20242a;padding:12px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.4)}
-.service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:18px}
-.card{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.3)}
-.card h3{margin:0 0 8px;font-size:16px;color:var(--accent)}
+.topbar b{color:#7BD8B3;font-weight:600}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(243,244,241,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-in{
+  max-width:var(--maxw);margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.brand img{width:42px;height:auto;border-radius:9px}
+.brand-name{font-weight:800;font-size:17px;letter-spacing:-.01em;line-height:1.1}
+.brand-sub{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{
+  color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;
+  padding:7px 12px;border-radius:8px;
+}
+nav a:hover{background:var(--chip);color:var(--green)}
+nav a.nav-cta{background:var(--green);color:#fff;font-weight:600}
+nav a.nav-cta:hover{background:var(--green-deep);color:#fff}
+
+/* ---------- layout ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+section{padding:52px 0 8px}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--green);
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line-dark)}
+h1,h2{font-variation-settings:"wdth" 112;letter-spacing:-.02em;line-height:1.12}
+h1{font-size:clamp(30px,5.4vw,50px);font-weight:850;margin:0 0 16px}
+h2{font-size:clamp(23px,3.4vw,32px);font-weight:800;margin:0 0 20px}
+.lead{color:var(--muted);font-size:17px;max-width:56ch;margin:0 0 24px}
+.lead strong{color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:start;padding-top:56px}
+.hero-anim{animation:rise .6s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:13px 22px;border-radius:11px;text-decoration:none;
+  font-weight:700;font-size:15px;border:1px solid transparent;
+  transition:transform .15s ease, background .15s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-wa{background:var(--green);color:#fff}
+.btn-wa:hover{background:var(--green-deep)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-dark)}
+.btn-ghost:hover{background:var(--chip)}
+.tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.tag{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.04em;
+  background:#fff;border:1px solid var(--line);color:var(--muted);
+  padding:6px 11px;border-radius:999px;
+}
+.tag::before{content:"● ";color:var(--green);font-size:8px;vertical-align:2px}
+
+/* service ticket (kartu servis) */
+.ticket{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:0 14px 34px rgba(20,27,23,.08);
+  overflow:hidden;
+}
+.ticket-head{
+  background:var(--ink);color:#EAF3EC;padding:13px 20px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+}
+.ticket-head .dot{color:#7BD8B3}
+.ticket-body{padding:20px}
+.trow{
+  display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px dashed var(--line-dark);
+}
+.trow:last-child{border-bottom:none}
+.trow .k{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.trow .v{text-align:right;font-size:14.5px;font-weight:600}
+.trow .v a{text-decoration:none;font-weight:700}
+.trow .v a:hover{text-decoration:underline}
+.ticket-why{margin:14px 0 0;padding:0 0 0 2px;list-style:none;color:var(--muted);font-size:14px}
+.ticket-why li{padding:5px 0 5px 26px;position:relative}
+.ticket-why li::before{
+  content:"✓";position:absolute;left:0;top:5px;
+  color:var(--green);font-weight:800;
+}
+
+/* ---------- services ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;transition:transform .15s ease, box-shadow .15s ease;
+}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,27,23,.07)}
+.svc-code{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;
+  letter-spacing:.12em;color:var(--green);
+  border:1px solid var(--line-dark);border-radius:5px;
+  display:inline-block;padding:2px 7px;margin-bottom:12px;background:var(--chip);
+}
+.card h3{margin:0 0 7px;font-size:16.5px;font-weight:750;letter-spacing:-.01em}
 .card p{margin:0;color:var(--muted);font-size:14px}
-.contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-.contact .box{flex:1;min-width:220px}
-footer{text-align:center;color:var(--muted);font-size:13px;margin-top:36px}
-.tags{margin-top:12px}
-.tag{display:inline-block;background:#20242a;color:var(--accent);padding:6px 8px;margin:4px;border-radius:999px;font-size:12px}
-@media(max-width:720px){h1{font-size:22px}}
+
+/* ---------- nota servis (tarif) ---------- */
+.nota{
+  max-width:560px;margin:0 auto;background:#fff;
+  border:1px solid var(--line);border-radius:6px;
+  box-shadow:0 18px 40px rgba(20,27,23,.09);
+  font-family:"IBM Plex Mono",monospace;
+  position:relative;
+}
+.nota::before,.nota::after{
+  content:"";display:block;height:10px;
+  background:
+    radial-gradient(circle at 8px -4px, transparent 7px, #fff 7.5px) ;
+  background-size:16px 10px;
+}
+.nota::before{transform:rotate(180deg)}
+.nota-in{padding:26px 28px 22px}
+.nota-title{
+  text-align:center;font-weight:600;letter-spacing:.22em;font-size:13px;
+  text-transform:uppercase;margin:0 0 4px;
+}
+.nota-sub{text-align:center;color:var(--muted);font-size:11px;letter-spacing:.06em;margin:0 0 18px}
+.nota hr{border:none;border-top:1px dashed var(--line-dark);margin:14px 0}
+.nota-item{display:flex;align-items:baseline;gap:8px;font-size:13.5px;padding:6px 0}
+.nota-item .n{white-space:nowrap}
+.nota-item .leader{flex:1;border-bottom:2px dotted var(--line-dark);transform:translateY(-4px)}
+.nota-item .p{white-space:nowrap;font-weight:600}
+.nota-note{font-size:11px;color:var(--muted);margin:12px 0 0;text-align:center}
+.nota-cta{display:flex;justify-content:center;margin-top:18px}
+
+/* ---------- testimonials ---------- */
+.quote strong{display:block;font-size:14px;margin-bottom:2px}
+.quote .who{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.stars{color:var(--amber);letter-spacing:2px;font-size:13px;margin:8px 0 6px}
+.quote p.q{margin:0;color:var(--ink);font-size:14.5px;font-style:italic}
+.src-note{margin-top:12px;font-size:12px;color:var(--muted)}
+
+/* ---------- area ---------- */
+.area-strip{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;
+}
+.area-cell{
+  background:var(--ink);color:#EAF3EC;border-radius:12px;padding:18px 16px;text-align:center;
+}
+.area-cell .nm{font-weight:800;font-size:18px;letter-spacing:-.01em;font-variation-settings:"wdth" 112}
+.area-cell .ds{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:#9FB7A9;letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+
+/* ---------- kontak ---------- */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.contact-grid .card p{margin:6px 0}
+.contact-grid .card strong.h{display:block;font-size:15px;margin-bottom:6px}
+
+/* ---------- FAQ ---------- */
+details{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:0 20px;margin-bottom:10px;
+}
+details summary{
+  cursor:pointer;font-weight:650;font-size:15.5px;padding:16px 0;
+  list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";font-family:"IBM Plex Mono",monospace;font-size:18px;color:var(--green);font-weight:600}
+details[open] summary::after{content:"–"}
+details p{margin:0;padding:0 0 16px;color:var(--muted);font-size:14.5px}
+
+/* ---------- footer ---------- */
+footer{
+  margin-top:64px;border-top:1px solid var(--line);
+  background:var(--chip);
+}
+.foot-in{
+  max-width:var(--maxw);margin:0 auto;padding:26px 20px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:13px;color:var(--muted);
+}
+.foot-in .mono{font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+
+/* floating WA */
+.wa-float{
+  position:fixed;right:18px;bottom:18px;z-index:60;
+  background:var(--green);color:#fff;text-decoration:none;
+  display:flex;align-items:center;gap:9px;
+  padding:13px 18px;border-radius:999px;font-weight:700;font-size:14px;
+  box-shadow:0 10px 26px rgba(8,85,59,.35);
+  transition:transform .15s ease;
+}
+.wa-float:hover{transform:translateY(-2px)}
+
+a:focus-visible,.btn:focus-visible,summary:focus-visible,nav a:focus-visible{
+  outline:3px solid var(--amber);outline-offset:2px;border-radius:8px;
+}
+
+@media(max-width:840px){
+  .hero{grid-template-columns:1fr;gap:26px;padding-top:38px}
+  nav a:not(.nav-cta){display:none}
+  section{padding:40px 0 6px}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
 </style>
+
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -74,204 +294,287 @@ footer{text-align:center;color:var(--muted);font-size:13px;margin-top:36px}
     "postalCode": "",
     "addressCountry": "ID"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "",
-    "longitude": ""
-  },
   "areaServed": ["Batang","Pekalongan","Pemalang","Comal"],
   "openingHours": "Tu-Su",
   "priceRange": "Rp"
 }</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apa saja area layanan Flmn Komp?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Kami melayani Batang, Pekalongan, Pemalang, dan Comal. Untuk area lain, silakan hubungi WhatsApp untuk konfirmasi."}
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah tersedia layanan antar-jemput?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ya — tersedia layanan antar-jemput dan servis panggilan untuk wilayah terdekat."}
+    },
+    {
+      "@type": "Question",
+      "name": "Berapa lama estimasi perbaikan?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Estimasi tergantung kerusakan. Untuk instal ulang biasanya 2-3 jam; penggantian komponen tergantung ketersediaan spare part."}
+    }
+  ]
+}</script>
 </head>
 <body>
-<div class="container">
+
+<div class="topbar">
+  <span>Buka <b>Selasa–Minggu</b></span>
+  <span>Antar-jemput &amp; servis panggilan <b>tersedia</b></span>
+  <span>Batang · Pekalongan · Pemalang · Comal</span>
+</div>
+
 <header>
-  <div class="brand"><img src="logo.png" width="50" height="47" alt=""/>
-    <div>
-      <div style="font-weight:700;color:var(--text)">Flmn Komp</div>
-      <div style="font-size:12px;color:var(--muted)">Servis Komputer • Laptop • MacBook • Batang</div>
-    </div>
+  <div class="header-in">
+    <a class="brand" href="/">
+      <img src="logo.png" alt="Logo Flmn Komp" width="42" height="40">
+      <span>
+        <span class="brand-name">Flmn Komp</span><br>
+        <span class="brand-sub">Servis Komputer · Laptop · MacBook</span>
+      </span>
+    </a>
+    <nav>
+      <a href="#services">Layanan</a>
+      <a href="/games.html">Isi Games</a>
+      <a href="/tarif-servis.html">Tarif</a>
+      <a href="/tentang.html">Tentang</a>
+      <a href="/janji.html">Janji</a>
+      <a class="nav-cta" href="https://wa.me/6281392400272" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
   </div>
-  <nav>
-    <a href="#services">Layanan</a>
-    <a href="/games.html">Isi Games</a>    
-    <a href="/tarif-servis.html">Tarif</a>
-    <a href="/tentang.html">Tentang</a>
-  </nav>
 </header>
-<main>
+
+<main class="wrap">
+
+<!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="hero-left">
-    <h1>Servis Komputer, Laptop & MacBook di Batang</h1>
-    <p class="lead">Kami melayani <strong>servis komputer, laptop, macbook dan Rakit PC</strong> (<em>Computer Service, Laptop Service, and Custom PC</em>) untuk wilayah <strong>Batang, Pekalongan, Pemalang, dan Comal</strong>. Layanan cepat, profesional, bergaransi, serta tersedia antar-jemput dan kunjungan panggilan.</p>
-    <a class="cta" href="https://wa.me/6281392400272" target="_blank">Hubungi lewat WhatsApp</a>
-    <div class="tags"><span class="tag">Instal Ulang</span><span class="tag">Upgrade SSD</span><span class="tag">Servis Layar</span><span class="tag">Servis Keyboard</span></div>
-    <div style="margin-top:14px" class="secondary">
-      <strong>Alamat:</strong>
-      <div style="color:var(--muted);font-size:14px">Perumahan Griya Sejahtera Kecepak No. A23, Kabupaten Batang, Kecamatan Batang</div>
-      <a style="display:inline-block;margin-top:8px;font-size:14px;color:var(--accent)" href="https://maps.app.goo.gl/p9ocjUrEamk7DGzE9" target="_blank">Lihat di Google Maps</a>
+  <div class="hero-anim">
+    <div class="eyebrow">Servis Komputer · Laptop · MacBook · Rakit PC</div>
+    <h1>Servis Komputer, Laptop &amp; MacBook di Batang</h1>
+    <p class="lead">
+      Kami melayani <strong>servis komputer, laptop, MacBook, dan rakit PC</strong>
+      (<em>computer service, laptop service, and custom PC</em>) untuk wilayah
+      <strong>Batang, Pekalongan, Pemalang, dan Comal</strong>.
+      Pengerjaan cepat, bergaransi, estimasi biaya transparan — tersedia antar-jemput
+      dan kunjungan panggilan.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-wa" href="https://wa.me/6281392400272" target="_blank" rel="noopener">💬 Hubungi lewat WhatsApp</a>
+      <a class="btn btn-ghost" href="/tarif-servis.html">Lihat tarif</a>
+      <a class="btn btn-ghost" href="/janji.html">📅 Buat janji</a>
+    </div>
+    <div class="tags">
+      <span class="tag">Instal Ulang</span>
+      <span class="tag">Upgrade SSD</span>
+      <span class="tag">Servis Layar</span>
+      <span class="tag">Servis Keyboard</span>
+      <span class="tag">Rakit PC</span>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="card">
-      <h3>Kenapa memilih Flmn Komp?</h3>
-      <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
-        <li>Teknisi berpengalaman untuk Windows & macOS</li>
-        <li>Garansi servis & spare part</li>
+
+  <aside class="ticket hero-anim" style="animation-delay:.12s">
+    <div class="ticket-head">
+      <span><span class="dot">●</span> Kartu Servis</span>
+      <span>FLMN-KOMP</span>
+    </div>
+    <div class="ticket-body">
+      <div class="trow">
+        <span class="k">WhatsApp</span>
+        <span class="v"><a href="https://wa.me/6281392400272" target="_blank" rel="noopener">+62 813-9240-0272</a></span>
+      </div>
+      <div class="trow">
+        <span class="k">Alamat</span>
+        <span class="v" style="font-weight:500;font-size:13.5px">Perum. Griya Sejahtera Kecepak No. A23, Kec. Batang, Kab. Batang</span>
+      </div>
+      <div class="trow">
+        <span class="k">Peta</span>
+        <span class="v"><a href="https://maps.app.goo.gl/p9ocjUrEamk7DGzE9" target="_blank" rel="noopener">Buka Google Maps ↗</a></span>
+      </div>
+      <div class="trow">
+        <span class="k">Jam buka</span>
+        <span class="v">Selasa–Minggu</span>
+      </div>
+      <div class="trow">
+        <span class="k">Instagram</span>
+        <span class="v"><a href="https://instagram.com/" target="_blank" rel="noopener">@flmnkomp</a></span>
+      </div>
+      <ul class="ticket-why">
+        <li>Teknisi berpengalaman Windows &amp; macOS</li>
+        <li>Garansi servis &amp; spare part</li>
         <li>Estimasi biaya transparan</li>
-        <li>Pickup & service panggilan (area Batang)</li>
+        <li>Pickup &amp; servis panggilan (area Batang)</li>
       </ul>
     </div>
-    <div style="margin-top:12px" class="card">
-      <h3>Kontak cepat</h3>
-      <p style="margin:6px 0">WhatsApp: <a href="https://wa.me/6281392400272" style="color:var(--accent)">+62 813-9240-0272</a></p>
-      <p style="margin:6px 0">Instagram: <a href="https://instagram.com/" style="color:var(--accent)">@flmnkomp</a></p>
-      <p style="margin:6px 0;color:var(--muted);font-size:13px">Jam operasional: Selasa-Minggu</p>
+  </aside>
+</section>
+
+<!-- ============ LAYANAN ============ -->
+<section id="services">
+  <div class="eyebrow">Layanan Kami</div>
+  <h2>Dari instal ulang sampai perbaikan hardware</h2>
+  <div class="grid">
+    <div class="card">
+      <span class="svc-code">SW·01</span>
+      <h3>Instal Ulang Windows &amp; macOS</h3>
+      <p>Pengaturan ulang sistem, backup data, instal driver &amp; aplikasi penting.</p>
+    </div>
+    <div class="card">
+      <span class="svc-code">HW·02</span>
+      <h3>Upgrade RAM &amp; SSD</h3>
+      <p>Optimalkan performa laptop/PC — konsultasi kompatibilitas &amp; pemasangan profesional.</p>
+    </div>
+    <div class="card">
+      <span class="svc-code">LCD·03</span>
+      <h3>Servis Layar / LCD</h3>
+      <p>Perbaikan &amp; penggantian layar laptop maupun MacBook.</p>
+    </div>
+    <div class="card">
+      <span class="svc-code">KBD·04</span>
+      <h3>Servis Keyboard</h3>
+      <p>Membersihkan, mengganti keycaps, atau modul keyboard.</p>
+    </div>
+    <div class="card">
+      <span class="svc-code">HW·05</span>
+      <h3>Perbaikan Hardware</h3>
+      <p>Diagnosa motherboard, power, port, dan komponen lainnya.</p>
+    </div>
+    <div class="card">
+      <span class="svc-code">SW·06</span>
+      <h3>Anti-virus &amp; Recovery Data</h3>
+      <p>Pembersihan malware &amp; recovery data (jika memungkinkan).</p>
     </div>
   </div>
-</section>
-<section id="services" style="margin-top:26px">
-  <h2>Layanan Kami</h2>
-  <div class="service-grid">
-    <div class="card"><h3>Instal Ulang Windows & macOS (Laptop Service)</h3><p>Pengaturan ulang sistem, backup data, instal driver & aplikasi penting.</p></div>
-    <div class="card"><h3>Upgrade RAM & SSD</h3><p>Optimalkan performa laptop/PC — konsultasi kompatibilitas & pemasangan profesional.</p></div>
-    <div class="card"><h3>Servis Layar / LCD</h3><p>Perbaikan & penggantian layar laptop/MacBook.</p></div>
-    <div class="card"><h3>Servis Keyboard</h3><p>Membersihkan, mengganti keycaps, atau modul keyboard.</p></div>
-    <div class="card"><h3>Perbaikan Hardware (Computer Service)</h3><p>Diagnosa motherboard, power, port, dan komponen lainnya.</p></div>
-    <div class="card"><h3>Anti-virus & Recovery Data</h3><p>Pembersihan malware & recovery data (jika memungkinkan).</p></div>
-  </div>
-</section>
-<section id="service-extra" style="margin-top:26px">
-  <h2>Computer & Laptop Service (EN)</h2>
-  <div class="card"><p style="color:var(--muted)">We also provide <strong>computer service</strong>, <strong>laptop service</strong>, and <strong>MacBook service</strong> for international users or visitors in Batang, Pekalongan, Pemalang, and Comal. All services include diagnostics, repair, optimization, and hardware replacement if needed.</p></div>
-</section>
-<section id="harga" style="margin-top:26px">
-  <h2>Tarif Servis</h2>
-
-  <div class="card">
-    <p style="color:var(--muted)">
-      Berikut estimasi harga layanan <strong>servis komputer & laptop</strong>.
-      Untuk daftar lengkap dan detail, silakan buka halaman tarif.
+  <div class="card" style="margin-top:14px">
+    <p style="margin:0;color:var(--muted);font-size:14px">
+      <strong style="color:var(--ink)">Computer &amp; Laptop Service (EN)</strong> — We also provide
+      <strong>computer service</strong>, <strong>laptop service</strong>, and <strong>MacBook service</strong>
+      for international users or visitors in Batang, Pekalongan, Pemalang, and Comal. All services include
+      diagnostics, repair, optimization, and hardware replacement if needed.
     </p>
+  </div>
+</section>
 
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
-      <div style="flex:1;min-width:180px">
-        <strong>Instal ulang Windows</strong>
-        <div style="color:var(--muted)">Mulai Rp 100.000</div>
+<!-- ============ TARIF (NOTA SERVIS) ============ -->
+<section id="harga">
+  <div class="eyebrow">Tarif Servis</div>
+  <h2 style="text-align:center">Estimasi harga, tanpa biaya siluman</h2>
+  <div class="nota">
+    <div class="nota-in">
+      <p class="nota-title">— Nota Servis —</p>
+      <p class="nota-sub">Flmn Komp · Batang, Jawa Tengah</p>
+      <hr>
+      <div class="nota-item"><span class="n">Instal ulang Windows</span><span class="leader"></span><span class="p">mulai Rp 100.000</span></div>
+      <div class="nota-item"><span class="n">Instal macOS</span><span class="leader"></span><span class="p">mulai Rp 200.000</span></div>
+      <div class="nota-item"><span class="n">Bersih-bersih laptop</span><span class="leader"></span><span class="p">Rp 150.000</span></div>
+      <hr>
+      <p class="nota-note">*Harga dapat berubah sesuai kondisi perangkat.<br>Konsultasi &amp; pengecekan awal — tanya dulu, gratis.</p>
+      <div class="nota-cta">
+        <a class="btn btn-wa" href="/tarif-servis.html">Lihat daftar tarif lengkap →</a>
       </div>
-
-      <div style="flex:1;min-width:180px">
-        <strong>Instal macOS</strong>
-        <div style="color:var(--muted)">Mulai Rp 200.000</div>
-      </div>
-
-      <div style="flex:1;min-width:180px">
-        <strong>Bersih-bersih Laptop</strong>
-        <div style="color:var(--muted)">Rp 150.000</div>
-      </div>
-    </div>
-
-    <a href="/tarif-servis.html"
-       class="cta"
-       style="margin-top:14px;display:inline-block">
-       Lihat Daftar Tarif Lengkap →
-    </a>
-
-    <div style="margin-top:10px;color:var(--muted);font-size:13px">
-      *Harga dapat berubah sesuai kondisi perangkat.
     </div>
   </div>
 </section>
-<section id="alamat" style="margin-top:26px">
-  <h2>Alamat & Kirim Barang</h2>
-  <div class="card contact">
-    <div class="box">
-      <strong>Lokasi</strong>
-      <p style="margin:6px 0;color:var(--muted)">Perumahan Griya Sejahtera Kecepak No. A23, Kabupaten Batang, Kecamatan Batang</p>
-      <a href="https://maps.app.goo.gl/p9ocjUrEamk7DGzE9" target="_blank" style="color:var(--accent)">Buka Google Maps</a>
+
+<!-- ============ TESTIMONI ============ -->
+<section id="testimoni">
+  <div class="eyebrow">Testimoni Pelanggan</div>
+  <h2>Kata mereka yang sudah mampir</h2>
+  <div class="grid">
+    <div class="card quote">
+      <strong>Markus Epafras</strong>
+      <span class="who">Pekalongan</span>
+      <div class="stars">★★★★★</div>
+      <p class="q">“Ga nyesel rakit PC di sini, pemiliknya ramah dan cekatan.”</p>
     </div>
-    <div class="box">
-      <strong>Kontak</strong>
-      <p style="margin:6px 0"><a href="https://wa.me/6281392400272" style="color:var(--accent)">+62 813-9240-0272 (WhatsApp)</a></p>
-      <p style="margin:6px 0;color:var(--muted)">Email: timorfaelmin@gmail.com</p>
+    <div class="card quote">
+      <strong>Stella Amelinda</strong>
+      <span class="who">Pekalongan</span>
+      <div class="stars">★★★★★</div>
+      <p class="q">“Servisnya oke. Harganya juga oke. Recomennn.”</p>
     </div>
-    <div class="box">
-      <strong>Jam Kerja</strong>
-      <p style="margin:6px 0;color:var(--muted)">Selasa–Minggu</p>
-      <p style="margin:6px 0;color:var(--muted)">Service panggilan tersedia (area Batang)</p>
+    <div class="card quote">
+      <strong>Rendy Christianto</strong>
+      <span class="who">Pekalongan</span>
+      <div class="stars">★★★★★</div>
+      <p class="q">“Terima kasih kak, laptop saya jadi berfungsi seperti semula.”</p>
+    </div>
+    <div class="card quote">
+      <strong>Pelanggan</strong>
+      <span class="who">Pekalongan</span>
+      <div class="stars">★★★★★</div>
+      <p class="q">“Cepat, bisa ditunggu, bisa dipanggil ke rumah, ramah 👍”</p>
+    </div>
+  </div>
+  <p class="src-note">*Testimoni dirangkum dari pengalaman pelanggan dan ulasan di Google Bisnis (sebelumnya dikenal sebagai Rakit PC Semarang).</p>
+</section>
+
+<!-- ============ AREA ============ -->
+<section id="area-layanan">
+  <div class="eyebrow">Area Layanan</div>
+  <h2>Melayani empat wilayah</h2>
+  <div class="area-strip">
+    <div class="area-cell"><div class="nm">Batang</div><div class="ds">+ Servis panggilan</div></div>
+    <div class="area-cell"><div class="nm">Pekalongan</div><div class="ds">Antar-jemput</div></div>
+    <div class="area-cell"><div class="nm">Pemalang</div><div class="ds">Antar-jemput</div></div>
+    <div class="area-cell"><div class="nm">Comal</div><div class="ds">Antar-jemput</div></div>
+  </div>
+</section>
+
+<!-- ============ ALAMAT & KONTAK ============ -->
+<section id="alamat">
+  <div class="eyebrow">Alamat &amp; Kirim Barang</div>
+  <h2>Mampir atau kirim perangkatmu</h2>
+  <div class="contact-grid">
+    <div class="card">
+      <strong class="h">📍 Lokasi</strong>
+      <p style="color:var(--muted)">Perumahan Griya Sejahtera Kecepak No. A23, Kecamatan Batang, Kabupaten Batang</p>
+      <p><a href="https://maps.app.goo.gl/p9ocjUrEamk7DGzE9" target="_blank" rel="noopener">Buka Google Maps ↗</a></p>
+    </div>
+    <div class="card">
+      <strong class="h">📱 Kontak</strong>
+      <p><a href="https://wa.me/6281392400272" target="_blank" rel="noopener">+62 813-9240-0272 (WhatsApp)</a></p>
+      <p style="color:var(--muted)">Email: timorfaelmin@gmail.com</p>
+    </div>
+    <div class="card">
+      <strong class="h">🕑 Jam Kerja</strong>
+      <p style="color:var(--muted)">Selasa–Minggu</p>
+      <p style="color:var(--muted)">Servis panggilan tersedia (area Batang)</p>
     </div>
   </div>
 </section>
-<section style="margin-top:26px" id="testimoni">
-  <h2>Testimoni Pelanggan</h2>
 
-  <div class="service-grid">
-    <div class="card">
-      <strong>Markus Epafras — Pekalongan</strong>
-      <p style="color:var(--muted);margin-top:6px">
-        ⭐⭐⭐⭐⭐<br>
-        “Ga nyesel rakit pc di sini, pemiliknya ramah dan cekatan”
-      </p>
-    </div>
-
-    <div class="card">
-      <strong>Stella Amelinda — Pekalongan</strong>
-      <p style="color:var(--muted);margin-top:6px">
-        ⭐⭐⭐⭐⭐<br>
-        “Servisnya oke. Harganya juga oke. Recomennn”
-      </p>
-    </div>
-
-    <div class="card">
-      <strong>Rendy Christianto — Pekalongan</strong>
-      <p style="color:var(--muted);margin-top:6px">
-        ⭐⭐⭐⭐⭐<br>
-        “Terima kasih kak laptop saya jd berfungsi sprt semula”
-      </p>
-    </div>
-
-    <div class="card">
-      <strong>Backup 1 — Pekalongan</strong>
-      <p style="color:var(--muted);margin-top:6px">
-        ⭐⭐⭐⭐⭐<br>
-        “Cepat bisa ditunggu, bisa dipanggil ke rumah, ramah 👍”
-      </p>
-    </div>
-  </div>
-
-  <p style="margin-top:10px;font-size:12px;color:var(--muted)">
-    *Testimoni dirangkum dari pengalaman pelanggan dan ulasan di Google Bisnis
-    (sebelumnya dikenal sebagai Rakit PC Semarang).
-  </p>
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="eyebrow">FAQ</div>
+  <h2>Pertanyaan yang sering diajukan</h2>
+  <details open>
+    <summary>Apa saja area layanan Flmn Komp?</summary>
+    <p>Kami melayani Batang, Pekalongan, Pemalang, dan Comal. Untuk area lain, silakan hubungi WhatsApp untuk konfirmasi.</p>
+  </details>
+  <details>
+    <summary>Apakah tersedia layanan antar-jemput?</summary>
+    <p>Ya — tersedia layanan antar-jemput dan servis panggilan untuk wilayah terdekat.</p>
+  </details>
+  <details>
+    <summary>Berapa lama estimasi perbaikan?</summary>
+    <p>Estimasi tergantung kerusakan. Untuk instal ulang biasanya 2–3 jam; penggantian komponen tergantung ketersediaan spare part.</p>
+  </details>
 </section>
-  
-<section style="margin-top:26px" id="area-layanan">
-  <h2>Area Layanan</h2>
-  <div class="card"><p style="color:var(--muted)">Kami melayani perbaikan komputer, laptop, macBook dan Rakit PC untuk wilayah <strong>Batang, Pekalongan, Pemalang, dan Comal</strong>. Tersedia layanan antar-jemput dan servis panggilan.</p></div>
-</section>
-  
-<section style="margin-top:26px" id="faq">
-  <h2>FAQ (Pertanyaan yang Sering Diajukan)</h2>
-  <div class="card">
-    <h3>Apa saja area layanan Flmn Komp?</h3>
-    <p style="color:var(--muted)">Kami melayani Batang, Pekalongan, Pemalang, dan Comal. Untuk area lain, silakan hubungi WhatsApp untuk konfirmasi.</p>
-    <h3>Apakah tersedia layanan antar-jemput?</h3>
-    <p style="color:var(--muted)">Ya — tersedia layanan antar-jemput dan servis panggilan untuk wilayah terdekat.</p>
-    <h3>Berapa lama estimasi perbaikan?</h3>
-    <p style="color:var(--muted)">Estimasi tergantung kerusakan. Untuk instal ulang biasanya 2-3 jam; penggantian komponen tergantung ketersediaan spare part.</p>
-  </div>
-</section>
+
 </main>
-<footer>© Timor Faelmin • Flmn Komp • 2022-2025</footer>
-</div>
+
+<a class="wa-float" href="https://wa.me/6281392400272" target="_blank" rel="noopener" aria-label="Chat WhatsApp Flmn Komp">💬 Chat WhatsApp</a>
+
+<footer>
+  <div class="foot-in">
+    <span>© Timor Faelmin · Flmn Komp · 2022–2026</span>
+    <span class="mono">Servis Komputer · Laptop · MacBook · Rakit PC — Batang</span>
+  </div>
+</footer>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
