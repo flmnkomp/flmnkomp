@@ -610,8 +610,8 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,nav a:focus-visible{
     { label:"Pembersihan virus + instal ulang", harga:100000, prefix:"mulai", kw:["virus","malware","ransomware","iklan muncul","adware","kena hack"] },
     { label:"Upgrade RAM (jasa)",          harga:50000,  prefix:"",      suffix:"+ harga RAM", kw:["ram","tambah memori","upgrade memori"] },
     { label:"Upgrade SSD (jasa)",          harga:50000,  prefix:"",      suffix:"+ harga SSD", kw:["ssd","hardisk","harddisk","hdd","ganti penyimpanan","upgrade penyimpanan"] },
-    { label:"Servis / ganti LCD",          harga:null,   kw:["lcd","layar","screen","pecah","bergaris","blank hitam","layar mati","flicker","layar bergaris"] },
-    { label:"Servis keyboard",             harga:20000,  prefix:"mulai", kw:["keyboard","tombol","keycaps","huruf tidak","tombol macet"] },
+    { label:"Servis / ganti LCD",          harga:450000, prefix:"mulai", suffix:"*", kw:["lcd","layar","screen","pecah","bergaris","blank hitam","layar mati","flicker","layar bergaris"] },
+    { label:"Servis keyboard",             harga:300000, prefix:"mulai", kw:["keyboard","tombol","keycaps","huruf tidak","tombol macet"] },
     { label:"Bersih-bersih laptop",        harga:150000, prefix:"",      kw:["laptop panas","panas","overheat","kepanasan","fan berisik","kipas berisik","bersih laptop","laptop mati sendiri","cleaning laptop","debu"] },
     { label:"Bersih-bersih komputer / PC", harga:100000, prefix:"",      kw:["pc panas","komputer panas","bersih pc","bersih komputer","cleaning pc","pc berisik","pc mati sendiri"] },
     { label:"Isi game PC",                 harga:25000,  prefix:"",      suffix:"/game", not:["rakit","build"], kw:["isi game","copy game","instal game","install game","game"] },
@@ -656,7 +656,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,nav a:focus-visible{
       return;
     }
 
-    var total = 0, adaHubungi = false, adaTambahan = false;
+    var total = 0, adaHubungi = false, adaTambahan = false, adaBintang = false;
     cocok.forEach(function(t){
       var row = document.createElement("div");
       row.className = "nota-item";
@@ -669,6 +669,7 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,nav a:focus-visible{
         harga = '<span class="p">' + teks + '</span>';
         total += t.harga;
         if (t.suffix && t.suffix.indexOf("+") === 0) adaTambahan = true;
+        if (t.suffix === "*" && t.label.indexOf("LCD") !== -1) adaBintang = true;
       }
       row.innerHTML = '<span class="n">' + t.label + '</span><span class="leader"></span>' + harga;
       list.appendChild(row);
@@ -689,7 +690,8 @@ a:focus-visible,.btn:focus-visible,summary:focus-visible,nav a:focus-visible{
     }
 
     note.innerHTML = "*Ini estimasi otomatis berdasarkan daftar tarif kami — harga pasti dikonfirmasi setelah pengecekan (gratis)." +
-      (adaTambahan ? "<br>*Harga komponen (RAM/SSD) menyesuaikan tipe yang dipilih." : "");
+      (adaTambahan ? "<br>*Harga komponen (RAM/SSD) menyesuaikan tipe yang dipilih." : "") +
+      (adaBintang ? "<br>*Harga LCD menyesuaikan tipe/ukuran layar." : "");
   }
 
   btn.addEventListener("click", cek);
