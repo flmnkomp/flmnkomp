@@ -3,7 +3,6 @@
     { "jam": "09.00-11.00", "label": "Keluar Kota", "status": "Off" }
   ],
   "2026-08-02": [
-    { "jam": "10.00-12.00", "label": "Rakit PC", "status": "terisi" },
-    { "jam": "13.00-15.00", "label": "Keluar kota", "status": "terisi" }
+    { "jam": "10.00-12.00", "label": "Rakit PC", "status": "terisi" }
   ]
 }
