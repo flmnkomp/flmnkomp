@@ -13,5 +13,8 @@
   ],
   "2026-07-26": [
     { "jam": "11.00-15.00", "label": "Rakit PC", "status": "Terisi" }
+  ],
+  "2026-07-27": [
+    { "jam": "08.00-14.00", "label": "Servis Macbook", "status": "Terisi" }
   ]
 }
